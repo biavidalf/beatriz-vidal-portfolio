@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 body{
-    @apply bg-bg-main text-gray-100 px-7 py-6;
+    @apply bg-bg-main text-gray-100 px-7 py-6 md:p-0;
     font-family: "Montserrat", sans-serif;
 }
