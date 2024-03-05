@@ -5,7 +5,7 @@ import Illustration from "../../../assets/contact-illustration.svg";
 
 export default function Contact() {
   return (
-    <section className="bg-bg-mesh bg-bottom">
+    <section id="contact" className="bg-bg-mesh bg-bottom">
       <div className="flex !max-w-4xl flex-col gap-10 rounded-lg border border-stroke bg-bg-glass/50 px-6 py-10 lg:flex-row lg:items-center lg:gap-16 lg:p-12">
         <div className="space-y-4 lg:w-2/3">
           <div>

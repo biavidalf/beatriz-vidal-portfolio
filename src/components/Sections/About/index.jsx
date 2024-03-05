@@ -2,9 +2,9 @@ import { Code2, Play, MessageSquareMore, Dot } from "lucide-react";
 import { TextHighlight } from "../../Text";
 import { Chip } from "@material-tailwind/react";
 
-function AboutSection({ title, children, className }) {
+function AboutSection({ id, title, children, className }) {
   return (
-    <div className={`flex flex-col gap-6 ${className}`}>
+    <div id={id} className={`flex flex-col gap-6 ${className}`}>
       <div className="w-fit">
         <h2 className="text-2xl font-medium">{title}</h2>
         <hr className="mt-1 w-4/5 rounded border-[2px] border-purple-main" />
@@ -128,7 +128,7 @@ export default function About() {
   ];
 
   return (
-    <section className="flex flex-col gap-8">
+    <section id="about" className="flex flex-col gap-8">
       <h1 className="text-[32px]">About me</h1>
       <AboutSection title="Introduction">
         <div className="flex flex-col gap-5 text-justify text-lg text-gray-100/85 lg:text-xl">
@@ -187,14 +187,18 @@ export default function About() {
         </div>
       </AboutSection>
 
-      <AboutSection title="Professional Experience" className="mt-10">
+      <AboutSection
+        id="experience"
+        title="Professional Experience"
+        className="mt-10"
+      >
         <div className="flex flex-col gap-y-11 lg:gap-y-20">
           <AboutSectionItem data={professionalExperiences[0]} active={true} />
           <AboutSectionItem data={professionalExperiences[1]} />
         </div>
       </AboutSection>
 
-      <AboutSection title="Education" className="mt-10">
+      <AboutSection id="education" title="Education" className="mt-10">
         <div className="flex flex-col gap-y-11 lg:gap-y-20">
           <AboutSectionItem data={education[0]} active={true} />
           <AboutSectionItem data={education[1]} />

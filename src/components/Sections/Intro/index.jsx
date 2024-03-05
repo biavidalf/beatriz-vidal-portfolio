@@ -2,7 +2,10 @@ import ProfilePic from "../../../assets/profile-pic.jpeg";
 
 export default function Intro() {
   return (
-    <section className="flex h-screen flex-col items-center gap-4 py-14 md:flex-row md:gap-12">
+    <section
+      id="intro"
+      className="flex h-screen flex-col items-center gap-4 py-14 md:flex-row md:gap-12"
+    >
       <img src={ProfilePic} alt="Profile Picture" className="w-64 rounded" />
 
       <div className="flex flex-col items-center gap-4  text-center md:items-start md:text-left">

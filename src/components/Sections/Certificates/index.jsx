@@ -29,7 +29,10 @@ function Certificate() {
 
 export default function Certificates() {
   return (
-    <section className="bg-bg-mesh h-fit w-full !max-w-none bg-no-repeat">
+    <section
+      id="certificates"
+      className="h-fit w-full !max-w-none bg-bg-mesh bg-no-repeat"
+    >
       <div className="mx-auto flex max-w-5xl flex-col gap-y-5 py-20">
         <SectionTitle content="Certificates" />
         <p className="text-justify text-lg text-gray-100/75 lg:text-xl">

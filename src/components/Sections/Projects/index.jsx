@@ -5,7 +5,7 @@ import Project from "./Project";
 
 export default function Projects() {
   return (
-    <section className="flex flex-col gap-8">
+    <section id="projects" className="flex flex-col gap-8">
       <div className="space-y-3">
         <SectionTitle content="Best Projects" className="mb-1" />
         <p className="text-justify text-lg text-gray-100/75 lg:text-xl">
