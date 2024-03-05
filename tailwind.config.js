@@ -25,8 +25,18 @@ export default withMT({
       },
       backgroundImage: {
         "bg-mesh": "url('/mesh.png')",
+        "bg-intro": "url('/bg-intro.png')"
       },
     },
+    animation: {
+      'loop-scroll': 'loop-scroll 15s linear infinite',
+    },
+    keyframes: {
+      'loop-scroll': {
+        from: { transform: 'translateX(0)' },
+        to: { transform: 'translateX(-100%)' },
+      }
+    } 
   },
   plugins: [
     require("@tailwindcss/forms")({

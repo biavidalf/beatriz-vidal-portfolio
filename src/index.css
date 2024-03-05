@@ -2,7 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    @apply bg-bg-main text-gray-100;
-    font-family: "Montserrat", sans-serif;
+body {
+  @apply bg-bg-main text-gray-100;
+  font-family: "Montserrat", sans-serif;
+}
+
+@layer utilities {
+  .paused {
+    animation-play-state: paused;
+  }
 }

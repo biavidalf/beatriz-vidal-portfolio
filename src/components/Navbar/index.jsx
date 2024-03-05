@@ -62,7 +62,7 @@ export default function Navbar() {
           size={20}
           className="transition-colors hover:text-purple-main"
         />
-        <button className="mt-3 rounded bg-bg-purple-dark py-3 text-sm font-semibold transition duration-200 hover:bg-bg-purple-hover lg:px-4 lg:py-[6px]">
+        <button className="mt-3 rounded bg-bg-purple-dark py-3 text-sm font-semibold transition duration-200 hover:bg-bg-purple-hover lg:mt-0 lg:px-4 lg:py-[6px]">
           Contact Me
         </button>
       </ul>

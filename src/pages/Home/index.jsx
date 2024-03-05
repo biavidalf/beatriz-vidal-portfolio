@@ -13,7 +13,7 @@ function Home() {
       <Hero />
       <Navbar />
 
-      <div className=" mx-auto w-full space-y-24 py-16 *:mx-auto *:px-7 *:md:max-w-5xl ">
+      <div className=" mx-auto w-full space-y-24 pb-16 *:mx-auto *:px-7 *:md:max-w-5xl ">
         <Intro />
         <Projects />
         <About />
