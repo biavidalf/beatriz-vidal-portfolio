@@ -1,14 +1,11 @@
 import { Code2, Play, MessageSquareMore, Dot } from "lucide-react";
-import { TextHighlight } from "../../Text";
+import { TextHighlight, SectionTitle, SectionSubtitle } from "../../Text";
 import { Chip } from "@material-tailwind/react";
 
 function AboutSection({ id, title, children, className }) {
   return (
     <div id={id} className={`flex flex-col gap-6 ${className}`}>
-      <div className="w-fit">
-        <h2 className="text-2xl font-medium">{title}</h2>
-        <hr className="mt-1 w-4/5 rounded border-[2px] border-purple-main" />
-      </div>
+      <SectionSubtitle content={title} />
       {children}
     </div>
   );
@@ -129,7 +126,7 @@ export default function About() {
 
   return (
     <section id="about" className="flex flex-col gap-8">
-      <h1 className="text-[32px]">About me</h1>
+      <SectionTitle content="About me" />
       <AboutSection title="Introduction">
         <div className="flex flex-col gap-5 text-justify text-lg text-gray-100/85 lg:text-xl">
           <p>
