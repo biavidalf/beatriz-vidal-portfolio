@@ -8,20 +8,20 @@ import {
 } from "lucide-react";
 import {
   Chip,
-  Button,
   Menu,
   MenuHandler,
   MenuList,
   MenuItem,
 } from "@material-tailwind/react";
-import Logo from "./../../assets/logo.svg";
-import LogoName from "./../../assets/logo-name.svg";
-import HeroIllustration from "./../../assets/hero-illustration.svg";
+
+import Logo from "../../../assets/logo.svg";
+import LogoName from "../../../assets/logo-name.svg";
+import HeroIllustration from "../../../assets/hero-illustration.svg";
 
 function Hero() {
   return (
     <>
-      <header className="4xl:max-w-6xl m-auto flex flex-col items-center gap-16 px-5 md:h-screen md:w-full md:max-w-5xl md:justify-evenly">
+      <header className="4xl:max-w-6xl m-auto flex h-screen flex-col items-center gap-16 px-7 py-6 md:w-full md:max-w-5xl md:justify-evenly">
         <nav className="flex w-full flex-wrap items-center justify-between sm:hidden">
           <img src={Logo} alt="Beatriz Vidal Logo" />
           <Menu placement="bottom-end">
@@ -48,25 +48,37 @@ function Hero() {
           </Menu>
         </nav>
 
-        <nav className="hidden font-semibold uppercase text-gray-500 *:transition-all *:delay-75 sm:flex sm:items-center sm:gap-8 sm:text-sm">
-          <a href="#Projects" className=" hover:text-gray-200">
+        <nav className="hidden font-semibold uppercase text-gray-500 sm:flex sm:items-center sm:gap-8 sm:text-sm">
+          <a
+            href="#Projects"
+            className="transition-colors hover:text-purple-main"
+          >
             Projects
           </a>
-          <a href="#About" className=" hover:text-gray-200">
+          <a href="#About" className="transition-colors hover:text-purple-main">
             About
           </a>
-          <a href="#Experience" className=" hover:text-gray-200">
+          <a
+            href="#Experience"
+            className="transition-colors hover:text-purple-main"
+          >
             Experience
           </a>
-          <a href="#Certificates" className=" hover:text-gray-200">
+          <a
+            href="#Certificates"
+            className="transition-colors hover:text-purple-main"
+          >
             Certificates
           </a>
-          <a href="#Contact" className=" hover:text-gray-200">
+          <a
+            href="#Contact"
+            className="transition-colors hover:text-purple-main"
+          >
             Contact
           </a>
         </nav>
 
-        <main className="flex flex-col items-center justify-center gap-12 md:w-full md:flex-row-reverse md:flex-wrap md:justify-center ">
+        <main className="flex flex-col items-center justify-center gap-12 lg:w-full lg:flex-row-reverse lg:flex-wrap lg:justify-center ">
           <img src={HeroIllustration} className="w-2/3 md:w-auto md:flex-1" />
           <div className="flex flex-col items-center gap-3 md:flex-1 md:items-start md:gap-4">
             <Chip
@@ -74,8 +86,13 @@ function Hero() {
               className="hidden w-fit rounded-md bg-bg-purple-hover text-sm font-medium normal-case md:inline"
             />
             <div className="flex flex-col items-center gap-3 md:items-start">
-              <h1 className="flex flex-wrap items-center gap-3 text-5xl font-medium">
-                I'm <img src={LogoName} alt="Logo name" className="h-[39px]" />
+              <h1 className="flex flex-wrap items-center gap-3 text-3xl font-medium md:text-5xl">
+                I'm{" "}
+                <img
+                  src={LogoName}
+                  alt="Logo name"
+                  className="w-48 md:h-[39px] md:w-auto"
+                />
               </h1>
               <p className="text-center text-[18px] font-medium text-gray-100/60 md:text-start">
                 A 20 year old Brazilian{" "}
@@ -92,7 +109,7 @@ function Hero() {
               >
                 Best Projects
               </Button> */}
-              <button className="rounded-md bg-gradient-to-r from-[#5d55ce] via-purple-main to-[#8e87ed] px-7 py-3 text-[20px] font-medium normal-case tracking-wide">
+              <button className="rounded-md bg-gradient-to-r from-[#5d55ce] via-purple-main to-[#8e87ed] px-7 py-3 font-medium normal-case tracking-wide hover:bg-purple-main hover:bg-none md:text-[20px]">
                 Best Projects
               </button>
               <a
