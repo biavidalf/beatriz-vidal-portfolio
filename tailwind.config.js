@@ -42,5 +42,6 @@ export default withMT({
     require("@tailwindcss/forms")({
       strategy: "class",
     }),
+    require('tailwind-scrollbar'),
   ],
 });

@@ -1,14 +1,18 @@
-import IconReact from "../../../../assets/icons/technologies/icon-react.svg";
-import ScreenshotPhais from "../../../../assets/projects/phais-plus/cadastro.png";
+import { useCurrentProject } from "src/contexts/currentProject";
+import { projects } from "src/data/projects";
 
 export default function Project({
   openView,
+  idInList,
   project: { coverUrl, title, stack, id },
 }) {
+  const { currentProject, setCurrentProject } = useCurrentProject();
+
   return (
     <div
       onClick={() => {
-        openView(id);
+        openView(idInList);
+        setCurrentProject(idInList);
       }}
       className="relative cursor-pointer transition duration-500 ease-in-out hover:scale-105"
     >

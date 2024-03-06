@@ -5,19 +5,16 @@ import ProjectsFilter from "./ProjectsFilter";
 import ProjectsPagination from "../../Pagination";
 import Project from "./Project";
 import ProjectDrawer from "./ProjectDrawer";
-import { projects } from "../../../data/projects";
+import { projects } from "src/data/projects";
+
+import { useCurrentProject } from "src/contexts/currentProject";
 
 export default function Projects() {
   const [openRight, setOpenRight] = useState(false);
-  const [currentProject, setCurrentProject] = useState();
-  const openDrawerRight = (projectId) => {
-    setCurrentProject(projectId);
+
+  const { currentProject, setCurrentProject } = useCurrentProject();
+  const openDrawerRight = () => {
     setOpenRight(true);
-    console.log(projectId);
-  };
-  const closeDrawerRight = () => {
-    setCurrentProject(null);
-    setOpenRight(false);
   };
 
   return (
@@ -42,9 +39,14 @@ export default function Projects() {
         <ProjectsFilter />
 
         <div className="flex w-full flex-col items-center gap-y-5 *:flex-1 lg:flex-row lg:flex-wrap lg:justify-between *:lg:w-[49%] *:lg:flex-none">
-          {Object.entries(projects).map(([id, project]) => {
+          {projects.map((project, index) => {
             return (
-              <Project key={id} openView={openDrawerRight} project={project} />
+              <Project
+                key={index}
+                openView={openDrawerRight}
+                project={project}
+                idInList={index}
+              />
             );
           })}
         </div>
@@ -52,12 +54,8 @@ export default function Projects() {
         <ProjectsPagination />
       </div>
 
-      {currentProject && (
-        <ProjectDrawer
-          openRight={openRight}
-          closeDrawerRight={closeDrawerRight}
-          project={projects[currentProject]}
-        />
+      {currentProject != null && (
+        <ProjectDrawer openRight={openRight} setOpenRight={setOpenRight} />
       )}
     </section>
   );

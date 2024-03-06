@@ -1,22 +1,42 @@
+import { useRef } from "react";
+
 import { Drawer, Typography, Button } from "@material-tailwind/react";
-import { ChevronLeftIcon, Link } from "lucide-react";
+import { Link } from "lucide-react";
 import ProjectCarousel from "../ProjectCarousel";
+import { projects } from "src/data/projects";
+import { useCurrentProject } from "src/contexts/currentProject";
+import { nextProject } from "../../../../utils/nextProject";
+import { resetScrollPosition } from "../../../../utils/resetScrollPosition";
 
 import IconArrowLeft from "src/assets/icons/arrow-left.svg";
 import IconArrowRight from "src/assets/icons/arrow-right.svg";
 
-export default function ProjectDrawer({
-  openRight,
-  closeDrawerRight,
-  project: { fullTitle, stack, description, id, github, images },
-}) {
+export default function ProjectDrawer({ setOpenRight, openRight }) {
+  const drawerRef = useRef();
+
+  const { currentProject, setCurrentProject } = useCurrentProject();
+  const { fullTitle, stack, description, id, github, images } =
+    projects[currentProject];
+
+  const closeDrawerRight = () => {
+    setOpenRight(false);
+  };
+
+  const goToNextProject = () => {
+    const nextProjectId = nextProject(currentProject);
+    setCurrentProject(nextProjectId);
+    resetScrollPosition(drawerRef);
+  };
+
   return (
     <Drawer
+      id="drawer"
+      ref={drawerRef}
       placement="right"
       open={openRight}
       onClose={closeDrawerRight}
       size={650}
-      className="no-scrollbar overflow-auto bg-bg-purple-dark px-6 py-6 text-blue-gray-100"
+      className="scrollbar-none overflow-auto bg-bg-purple-dark px-6 py-6 text-blue-gray-100"
     >
       <button
         onClick={closeDrawerRight}
@@ -84,29 +104,8 @@ export default function ProjectDrawer({
           </div>
         </div>
 
-        {/* <Button
-          variant="text"
-          className="mx-auto flex w-fit items-center gap-2 text-purple-main hover:bg-bg-purple-hover"
-          onClick={closeDrawerRight}
-        >
-          Go to next project{" "}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="h-5 w-5"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-            />
-          </svg>
-        </Button> */}
         <button
-          onClick={closeDrawerRight}
+          onClick={goToNextProject}
           className="my-4 flex w-fit items-center gap-4 self-center rounded-md px-3 py-1 text-gray-300 transition-all hover:mr-3 hover:bg-bg-purple-hover"
         >
           <Typography variant="h6">GO TO NEXT PROJECT</Typography>

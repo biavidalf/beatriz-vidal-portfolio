@@ -1,5 +1,5 @@
-export const projects = {
-    "phais-plus": {
+export const projects = [
+    {
         id: "phais-plus",
         title: "Phais+",
         fullTitle: "PHAIS+ Pharmaceutical System",
@@ -15,9 +15,10 @@ export const projects = {
             "solicitacao.png",
             "solicitacoes.png",
         ],
-        coverUrl: "cadastro.png"
+        coverUrl: "cadastro.png",
+        type: "web"
     },
-    "bbcs": {
+    {
         id: "bbcs",
         title: "Bring Back Coffee",
         fullTitle: "Bring Back Coffee Shop",
@@ -31,6 +32,7 @@ export const projects = {
             "home.gif",
             "produto_individual.gif",
         ],
-        coverUrl: "banner.png"
+        coverUrl: "banner.png",
+        type: "web"
     }
-};
+];
