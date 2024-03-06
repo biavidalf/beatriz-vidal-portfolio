@@ -5,10 +5,11 @@ export default function Project({
   openView,
   project: { coverUrl, title, stack, id },
 }) {
-  console.log(stack);
   return (
     <div
-      onClick={openView}
+      onClick={() => {
+        openView(id);
+      }}
       className="relative cursor-pointer transition duration-500 ease-in-out hover:scale-105"
     >
       <img
@@ -20,7 +21,6 @@ export default function Project({
         <h1 className="font-medium">{title}</h1>
         <div className="flex gap-2">
           {stack.map((technology, index) => {
-            console.log(technology);
             return (
               <img
                 key={index}
