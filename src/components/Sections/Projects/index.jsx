@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Drawer, Typography, Carousel, Button } from "@material-tailwind/react";
-import { ChevronLeftIcon, ExternalLink } from "lucide-react";
+import { ChevronLeftIcon, ExternalLink, Link } from "lucide-react";
 
 import { SectionTitle, SectionSubtitle, TextHighlight } from "../../Text";
 import ProjectsFilter from "./ProjectsFilter";
 import ProjectsPagination from "../../Pagination";
 import Project from "./Project";
+import { projects } from "../../../data/projects";
 
 import phais1 from "src/assets/projects/phais-plus/solicitacao.png";
 import phais2 from "src/assets/projects/phais-plus/estoque.png";
@@ -44,10 +45,12 @@ export default function Projects() {
         <ProjectsFilter />
 
         <div className="flex w-full flex-col items-center gap-y-5 *:flex-1 lg:flex-row lg:flex-wrap lg:justify-between *:lg:w-[49%] *:lg:flex-none">
-          <Project openView={openDrawerRight} />
-          <Project openView={openDrawerRight} />
-          <Project openView={openDrawerRight} />
-          <Project openView={openDrawerRight} />
+          {Object.entries(projects).map(([id, project]) => {
+            console.log(id, project);
+            return (
+              <Project key={id} openView={openDrawerRight} project={project} />
+            );
+          })}
         </div>
 
         <ProjectsPagination />
@@ -139,10 +142,10 @@ export default function Projects() {
             <div className="text-lg">
               <a
                 href="https://github.com/biavidalf/phais-plus"
-                className="flex items-center gap-2 underline underline-offset-4"
+                className="flex flex-row-reverse items-center justify-end gap-2"
               >
                 https://github.com/biavidalf/phais-plus
-                <ExternalLink />
+                <Link size={22} />
               </a>
             </div>
           </div>
