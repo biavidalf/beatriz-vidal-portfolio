@@ -18,13 +18,16 @@ import {
 import Logo from "../../../assets/logo.svg";
 import LogoName from "../../../assets/logo-name.svg";
 import HeroIllustration from "../../../assets/hero-illustration.svg";
+import PdfViewer from "../../PdfViewer";
+import { useState } from "react";
 
 function Hero() {
+  const [isActive, setIsActive] = useState(false);
   return (
     <>
       <header
         id="hero"
-        className="4xl:max-w-6xl m-auto flex h-screen flex-col items-center gap-16 px-7 py-6 md:w-full md:max-w-5xl md:justify-evenly"
+        className="4xl:max-w-6xl relative m-auto flex h-screen flex-col items-center gap-16 px-7 py-6 md:w-full md:max-w-5xl md:justify-evenly"
       >
         <nav className="flex w-full flex-wrap items-center justify-between sm:hidden">
           <img src={Logo} alt="Beatriz Vidal Logo" />
@@ -107,21 +110,17 @@ function Hero() {
             </div>
 
             <div className="mt-4 flex flex-wrap items-center gap-5">
-              {/* <Button
-                size="lg"
-                className="bg-gradient-to-r from-deep-purple-600 to-deep-purple-400 text-base font-semibold normal-case tracking-wide"
-              >
-                Best Projects
-              </Button> */}
               <button className="rounded-md bg-gradient-to-r from-[#5d55ce] via-purple-main to-[#8e87ed] px-7 py-3 font-medium normal-case tracking-wide hover:bg-purple-main hover:bg-none md:text-[20px]">
                 Best Projects
               </button>
-              <a
-                href=""
+              <button
+                onClick={() => {
+                  setIsActive(true);
+                }}
                 className="border-b border-gray-400 text-gray-400 transition-all delay-75 hover:border-gray-50 hover:text-gray-50"
               >
                 Open resume
-              </a>
+              </button>
             </div>
           </div>
 
@@ -171,6 +170,12 @@ function Hero() {
             />
           </li>
         </ul>
+
+        <PdfViewer
+          isActive={isActive}
+          setIsActive={setIsActive}
+          pdfPath="resume/BeatrizVidalCurriculo.pdf"
+        />
       </header>
     </>
   );
