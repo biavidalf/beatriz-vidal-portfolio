@@ -1,4 +1,4 @@
-import { Menu as MenuIcons, Languages } from "lucide-react";
+import { Menu as MenuIcons, Languages, Globe } from "lucide-react";
 import {
   Chip,
   Menu,
@@ -20,9 +20,20 @@ import LogoName from "../../../assets/logo-name.svg";
 import HeroIllustration from "../../../assets/hero-illustration.svg";
 import PdfViewer from "../../PdfViewer";
 import { useState } from "react";
+import { useTranslation, Trans } from "react-i18next";
 
 function Hero() {
+  const {
+    t,
+    i18n: { changeLanguage, language },
+  } = useTranslation();
+
   const [isActive, setIsActive] = useState(false);
+
+  const handleChangeLanguage = () => {
+    const newLanguage = language === "en" ? "pt" : "en";
+    changeLanguage(newLanguage);
+  };
   return (
     <>
       <header
@@ -37,19 +48,19 @@ function Hero() {
             </MenuHandler>
             <MenuList className="border-deep-purple-400 bg-bg-purple-hover text-gray-200">
               <MenuItem className="focus:bg-deep-purple-400 focus:text-gray-100">
-                <a href="#projects">Projects</a>
+                <a href="#projects">{t("nav.projects")}</a>
               </MenuItem>
               <MenuItem className="focus:bg-deep-purple-400 focus:text-gray-100">
-                <a href="#about">About</a>
+                <a href="#about">{t("nav.about")}</a>
               </MenuItem>
               <MenuItem className="focus:bg-deep-purple-400 focus:text-gray-100">
-                <a href="#experience">Experience</a>
+                <a href="#experience">{t("nav.experience")}</a>
               </MenuItem>
               <MenuItem className="focus:bg-deep-purple-400 focus:text-gray-100">
-                <a href="#certificates">Certificates</a>
+                <a href="#certificates">{t("nav.certificates")}</a>
               </MenuItem>
               <MenuItem className="focus:bg-deep-purple-400 focus:text-gray-100">
-                <a href="#contact">Contact</a>
+                <a href="#contact">{t("nav.contact")}</a>
               </MenuItem>
             </MenuList>
           </Menu>
@@ -60,28 +71,28 @@ function Hero() {
             href="#projects"
             className="transition-colors hover:text-purple-main"
           >
-            Projects
+            {t("nav.projects")}
           </a>
           <a href="#about" className="transition-colors hover:text-purple-main">
-            About
+            {t("nav.about")}
           </a>
           <a
             href="#experience"
             className="transition-colors hover:text-purple-main"
           >
-            Experience
+            {t("nav.experience")}
           </a>
           <a
             href="#certificates"
             className="transition-colors hover:text-purple-main"
           >
-            Certificates
+            {t("nav.certificates")}
           </a>
           <a
             href="#contact"
             className="transition-colors hover:text-purple-main"
           >
-            Contact
+            {t("nav.contact")}
           </a>
         </nav>
 
@@ -89,12 +100,12 @@ function Hero() {
           <img src={HeroIllustration} className="w-2/3 md:w-auto md:flex-1" />
           <div className="flex flex-col items-center gap-3 md:flex-1 md:items-start md:gap-4">
             <Chip
-              value="Hey there!"
+              value={t("hero.greetings")}
               className="hidden w-fit rounded-md bg-bg-purple-hover text-sm font-medium normal-case md:inline"
             />
             <div className="flex flex-col items-center gap-3 md:items-start">
               <h1 className="flex flex-wrap items-center gap-3 text-3xl font-medium md:text-5xl">
-                I'm{" "}
+                {t("hero.im")}{" "}
                 <img
                   src={LogoName}
                   alt="Logo name"
@@ -102,16 +113,18 @@ function Hero() {
                 />
               </h1>
               <p className="text-center text-[18px] font-medium text-gray-100/60 md:text-start">
-                A 20 year old Brazilian{" "}
-                <span className="text-purple-main">Web and Salesforce</span>{" "}
-                Sales Cloud Developer that takes the client needs and a nice
-                work enviroment as a priority.
+                <Trans i18nKey="hero.introduction">
+                  A 20 year old Brazilian
+                  <span className="text-purple-main">Web and Salesforce</span>
+                  Sales Cloud Developer that takes the client needs and a nice
+                  work enviroment as a priority.
+                </Trans>
               </p>
             </div>
 
-            <div className="mt-4 flex flex-wrap items-center gap-5">
+            <div className="mt-4 flex flex-col items-center gap-3 sm:flex-row sm:gap-5">
               <button className="rounded-md bg-gradient-to-r from-[#5d55ce] via-purple-main to-[#8e87ed] px-7 py-3 font-medium normal-case tracking-wide hover:bg-purple-main hover:bg-none md:text-[20px]">
-                Best Projects
+                {t("hero.buttonProjects")}
               </button>
               <button
                 onClick={() => {
@@ -119,7 +132,7 @@ function Hero() {
                 }}
                 className="border-b border-gray-400 text-gray-400 transition-all delay-75 hover:border-gray-50 hover:text-gray-50"
               >
-                Open resume
+                {t("hero.buttonResume")}
               </button>
             </div>
           </div>
@@ -138,7 +151,21 @@ function Hero() {
               <Linkedin strokeWidth={1.5} />
             </li>
             <li>
-              <Languages className="text-purple-main" strokeWidth={1.5} />
+              <button
+                onClick={handleChangeLanguage}
+                className="relative flex h-[26px] w-14 items-center justify-between rounded-full border border-purple-main py-1 text-sm font-medium text-purple-main"
+              >
+                <div
+                  className={`absolute flex w-1/2 items-center justify-center ${language == "en" ? "left-[50%]" : "left-0"}`}
+                >
+                  <Globe size={18} strokeWidth={1.5} />
+                </div>
+                <span
+                  className={`absolute flex w-1/2 items-center justify-center ${language == "en" ? "left-0" : "left-[50%]"}`}
+                >
+                  {`${language == "en" ? "PT" : "EN"}`}
+                </span>
+              </button>
             </li>
           </ul>
         </main>
@@ -163,11 +190,21 @@ function Hero() {
             <Phone />
           </li>
           <li className="ml-6">
-            <Languages
-              className="text-purple-main"
-              size={24}
-              strokeWidth={1.5}
-            />
+            <button
+              onClick={handleChangeLanguage}
+              className="relative flex h-[26px] w-14 items-center justify-between rounded-full border border-purple-main py-1 text-sm font-medium text-purple-main"
+            >
+              <div
+                className={`absolute flex w-1/2 items-center justify-center ${language == "en" ? "left-[50%]" : "left-0"}`}
+              >
+                <Globe size={18} strokeWidth={1.5} />
+              </div>
+              <span
+                className={`absolute flex w-1/2 items-center justify-center ${language == "en" ? "left-0" : "left-[50%]"}`}
+              >
+                {`${language == "en" ? "PT" : "EN"}`}
+              </span>
+            </button>
           </li>
         </ul>
 

@@ -1,4 +1,7 @@
+import { useTranslation } from "react-i18next";
+
 export default function ProjectsFilter() {
+  const { t } = useTranslation();
   return (
     <nav className="w-full lg:w-[450px] lg:self-start">
       <ul
@@ -10,7 +13,9 @@ export default function ProjectsFilter() {
           className="relative flex h-full w-full cursor-pointer select-none items-center justify-center bg-transparent px-2 py-1 text-center font-sans text-base font-normal leading-relaxed text-gray-200 antialiased"
           data-value="all"
         >
-          <div className="z-20 text-inherit">&nbsp;&nbsp;All&nbsp;&nbsp;</div>
+          <div className="z-20 text-inherit">
+            &nbsp;&nbsp;{t("filter.all")}&nbsp;&nbsp;
+          </div>
           <div className="absolute inset-0 z-10 h-full rounded-md bg-bg-purple-hover shadow"></div>
         </li>
         <li

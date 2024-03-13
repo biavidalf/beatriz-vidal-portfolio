@@ -5,9 +5,10 @@ import About from "../../components/Sections/About";
 import Certificates from "../../components/Sections/Certificates";
 import Contact from "../../components/Sections/Contact";
 import Footer from "../../components/Sections/Footer";
-import { CurrentProjectContextProvider } from "src/contexts/currentProject";
 
 import Navbar from "../../components/Navbar";
+
+import { CurrentProjectContextProvider } from "src/contexts/currentProject";
 
 function Home() {
   return (

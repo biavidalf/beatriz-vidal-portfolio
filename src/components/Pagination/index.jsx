@@ -2,8 +2,11 @@ import { useState } from "react";
 
 import { Typography, IconButton } from "@material-tailwind/react";
 import { ChevronRight, ChevronLeft } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-export default function ProjectsPagination({ className }) {
+export default function Pagination({ className }) {
+  const { t } = useTranslation();
+
   const [active, setActive] = useState(1);
 
   const next = () => {
@@ -29,7 +32,9 @@ export default function ProjectsPagination({ className }) {
         <ChevronLeft className="h-4 w-4" />
       </IconButton>
       <Typography color="gray" className="font-normal text-gray-300">
-        Page <strong className="text-purple-main">{active}</strong> of 10
+        {t("pagination.page")}{" "}
+        <strong className="text-purple-main">{active}</strong>{" "}
+        {t("pagination.of")} 10
       </Typography>
       <IconButton
         size="sm"

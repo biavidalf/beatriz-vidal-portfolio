@@ -35,6 +35,12 @@ export default withMT({
       'loop-scroll': {
         from: { transform: 'translateX(0)' },
         to: { transform: 'translateX(-100%)' },
+      },
+      'slide-right': {
+        '100%': { left: '50%' },
+      },
+      'slide-left': {
+        '100%': { left: '0' },
       }
     } 
   },

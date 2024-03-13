@@ -8,8 +8,11 @@ import {
 } from "../../Links";
 import Logo from "../../../assets/logo.svg";
 import { Button } from "@material-tailwind/react";
+import { useTranslation } from "react-i18next";
 
 export default function () {
+  const { t } = useTranslation();
+
   return (
     <footer
       id="footer"
@@ -21,25 +24,23 @@ export default function () {
             <img src={Logo} alt="" className="w-52" />
             <ul className="hidden items-center gap-4 text-sm font-medium lg:flex">
               <li className="cursor-pointer transition-colors hover:text-gray-50">
-                <a href="#projects">Projects</a>
+                <a href="#projects">{t("nav.projects")}</a>
               </li>
               <li className="cursor-pointer transition-colors hover:text-gray-50">
-                <a href="#about">About</a>
+                <a href="#about">{t("nav.about")}</a>
               </li>
               <li className="cursor-pointer transition-colors hover:text-gray-50">
-                <a href="#certificates">Experience</a>
+                <a href="#certificates">{t("nav.experience")}</a>
               </li>
               <li className="cursor-pointer transition-colors hover:text-gray-50">
-                <a href="#certificates">Certificates</a>
+                <a href="#certificates">{t("nav.certificates")}</a>
               </li>
               <li className="cursor-pointer transition-colors hover:text-gray-50">
-                <a href="#experience">Resume</a>
+                <a href="#experience">{t("nav.resume")}</a>
               </li>
             </ul>
           </div>
-          <span className="text-sm">
-            Copyright © 2024. All rights reserved.
-          </span>
+          <span className="text-sm">{t("copyright")}</span>
         </div>
         <div className="flex h-full flex-col justify-around gap-y-3 text-gray-300 lg:gap-y-0">
           <div className="flex items-center justify-end gap-4 ">
@@ -54,7 +55,7 @@ export default function () {
             size="sm"
             className="bg-bg-purple-hover font-medium normal-case"
           >
-            Checkout my resume
+            {t("buttons.resume")}
           </Button>
         </div>
       </div>

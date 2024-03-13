@@ -6,6 +6,7 @@ import Pagination from "../../Pagination";
 import OsfAcademy from "../../../assets/courses/osf-academy.png";
 import { IconButton } from "@material-tailwind/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslation, Trans } from "react-i18next";
 
 function Certificate() {
   return (
@@ -28,23 +29,27 @@ function Certificate() {
 }
 
 export default function Certificates() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="certificates"
       className="h-fit w-full !max-w-none bg-bg-mesh bg-no-repeat"
     >
       <div className="mx-auto flex max-w-5xl flex-col gap-y-5 py-20">
-        <SectionTitle content="Certificates" />
+        <SectionTitle content={t("certificates.title")} />
         <p className="text-justify text-lg text-gray-100/75 lg:text-xl">
-          During my <TextHighlight>journey</TextHighlight>, I’ve earned a
-          variaty of certificates in web development, Salesforce, and design. I
-          firmly believe in the power of continuous learning—constantly{" "}
-          <TextHighlight>
-            seeking new knowledge and refining my skills
-          </TextHighlight>
-          . These certifications represent my{" "}
-          <TextHighlight>commitment to growth</TextHighlight> and excellence in
-          the ever-evolving world of technology.
+          <Trans i18nKey="certificates.description">
+            During my <TextHighlight>journey</TextHighlight>, I’ve earned a
+            variaty of certificates in web development, Salesforce, and design.
+            I firmly believe in the power of continuous learning—constantly
+            <TextHighlight>
+              seeking new knowledge and refining my skills
+            </TextHighlight>
+            . These certifications represent my
+            <TextHighlight>commitment to growth</TextHighlight> and excellence
+            in the ever-evolving world of technology.
+          </Trans>
         </p>
         <div className="mt-4 flex flex-col gap-y-7 lg:flex-row lg:flex-wrap lg:items-center lg:justify-center lg:gap-x-4">
           {window.innerWidth <= 960 ? (

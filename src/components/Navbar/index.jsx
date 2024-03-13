@@ -5,11 +5,32 @@ import {
   Typography,
   IconButton,
 } from "@material-tailwind/react";
-import { Languages, Menu, X } from "lucide-react";
+import { Globe, Languages, Menu, X } from "lucide-react";
 
 import Logo from "../../assets/logo.svg";
 
+import { useTranslation, Trans } from "react-i18next";
+
 export default function Navbar() {
+  const {
+    t,
+    i18n: { changeLanguage, language },
+  } = useTranslation("", { keyPrefix: "nav" });
+
+  const handleChangeLanguage = () => {
+    const newLanguage = language === "en" ? "pt" : "en";
+    changeLanguage(newLanguage);
+  };
+
+  const items = [
+    "projects",
+    "about",
+    "experience",
+    "resume",
+    "certificates",
+    "contact",
+  ];
+
   const [openNav, setOpenNav] = useState(false);
 
   const handleWindowResize = () =>
@@ -26,45 +47,42 @@ export default function Navbar() {
   function NavList() {
     return (
       <ul className="my-6 flex flex-col gap-2 text-gray-300 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-        <Typography as="li" variant="small" className="p-1 font-medium">
-          <a
-            href="#projects"
-            className="flex items-center transition-colors hover:text-purple-main"
+        {items.map((item, index) => {
+          return (
+            item != "contact" && (
+              <Typography as="li" className="p-1 font-medium" key={index}>
+                <a
+                  href={`#`}
+                  className="flex items-center transition-colors hover:text-purple-main"
+                >
+                  {t(item)}
+                </a>
+              </Typography>
+            )
+          );
+        })}
+        <li className="mt-3">
+          <button
+            onClick={handleChangeLanguage}
+            className="relative flex h-[26px] w-14 items-center justify-between rounded-full border border-purple-main py-1 text-sm font-medium text-purple-main"
           >
-            Projects
-          </a>
-        </Typography>
-        <Typography as="li" variant="small" className="p-1 font-medium">
-          <a
-            href="#about"
-            className="flex items-center transition-colors hover:text-purple-main"
-          >
-            About
-          </a>
-        </Typography>
-        <Typography as="li" variant="small" className="p-1 font-medium">
-          <a
-            href="#experience"
-            className="flex items-center transition-colors hover:text-purple-main"
-          >
-            Experience
-          </a>
-        </Typography>
-        <Typography as="li" variant="small" className="p-1 font-medium">
-          <a
-            href="#"
-            className="flex items-center transition-colors hover:text-purple-main"
-          >
-            Resume
-          </a>
-        </Typography>
-        <Languages
-          size={20}
-          className="transition-colors hover:text-purple-main"
-        />
-        <button className="mt-3 rounded bg-bg-purple-dark py-3 text-sm font-semibold transition duration-200 hover:bg-bg-purple-hover lg:mt-0 lg:px-4 lg:py-[6px]">
-          Contact Me
-        </button>
+            <div
+              className={`absolute flex w-1/2 items-center justify-center ${language == "en" ? "left-[50%]" : "left-0"}`}
+            >
+              <Globe size={18} strokeWidth={1.5} />
+            </div>
+            <span
+              className={`absolute flex w-1/2 items-center justify-center ${language == "en" ? "left-0" : "left-[50%]"}`}
+            >
+              {`${language == "en" ? "PT" : "EN"}`}
+            </span>
+          </button>
+        </li>
+        <li className="">
+          <button className="mt-3 w-full rounded-md bg-bg-purple-dark py-[10px] text-sm font-semibold transition duration-200 hover:bg-bg-purple-hover lg:mt-0 lg:px-4 lg:py-[6px]">
+            {t("contact")}
+          </button>
+        </li>
       </ul>
     );
   }
