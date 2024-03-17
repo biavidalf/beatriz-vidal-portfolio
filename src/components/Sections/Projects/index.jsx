@@ -5,7 +5,6 @@ import ProjectsFilter from "./ProjectsFilter";
 import Pagination from "../../Pagination";
 import Project from "./Project";
 import ProjectDrawer from "./ProjectDrawer";
-import { projects } from "src/data/projects";
 
 import { useCurrentProject } from "src/contexts/currentProject";
 import { Trans, useTranslation } from "react-i18next";
@@ -13,6 +12,7 @@ import { Trans, useTranslation } from "react-i18next";
 export default function Projects() {
   const { t } = useTranslation();
   const [openRight, setOpenRight] = useState(false);
+  const projects = t("projectsList", { returnObjects: true });
 
   const { currentProject, setCurrentProject } = useCurrentProject();
   const openDrawerRight = () => {
@@ -43,13 +43,13 @@ export default function Projects() {
         <ProjectsFilter />
 
         <div className="flex w-full flex-col items-center gap-y-5 *:flex-1 lg:flex-row lg:flex-wrap lg:justify-between *:lg:w-[49%] *:lg:flex-none">
-          {projects.map((project, index) => {
+          {Object.entries(projects).map(([key, project]) => {
             return (
               <Project
-                key={index}
+                key={key}
                 openView={openDrawerRight}
                 project={project}
-                idInList={index}
+                idInList={key}
               />
             );
           })}

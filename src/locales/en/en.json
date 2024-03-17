@@ -1,0 +1,152 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "about": "About",
+    "experience": "Experience",
+    "resume": "Resume",
+    "certificates": "Certificates",
+    "contact": "Contact Me"
+  },
+  "buttons": {
+    "resume": "Checkout my resume"
+  },
+  "copyright": "Beatriz Vidal © 2024. All rights reserved.",
+  "pagination": {
+    "page": "Page",
+    "of": "of"
+  },
+  "filter": {
+    "all": "All"
+  },
+  "hero": {
+    "greetings": "Hey there!",
+    "im": "I'm ",
+    "introduction": "A 20 year old Brazilian <1>Web and Salesforce</1> Sales Cloud Developer that takes the client needs and a nice work enviroment as a priority.",
+    "buttonProjects": "Best Projects",
+    "buttonResume": "Open resume"
+  },
+  "intro": {
+    "job1": "Web Developer | Designer",
+    "job2": "Salesforce Developer | Admin",
+    "description": "Understand client needs and deliver <1>exceptional results.</1>"
+  },
+  "projects": {
+    "title": "Best Projects",
+    "description": "Over the past few years, I’ve primarily focused on a <1> tech stack that includes Node.js, React.js, and TailwindCSS </1>. I usualy incorporate external libraries such as Radix, Lucide Icons, Material Tailwind, and Sooner to ensure my <3> applications are as consistent and accessible </3> as possible. Take a look at what I’ve been up to!"
+  },
+  "about": {
+    "title": "About me",
+    "intro": {
+      "title": "Introduction",
+      "description1": "Hey there! I'm a proactive and communicative Web/Salesforce <1>Brazilian Developer</1> and a passionate gamer with a growing love for programming.",
+      "description2": "I'm a Salesforce Administrator at Unimed Fortaleza and currently graduating in System Analysis and Development at UNIFOR.",
+      "description3": "As a Developer, I am constantly <1>seeking growth and improvement</1>, not just technically but also in all the social aspects of my work. My approach is to understand the <2>client's needs</2> and work collaboratively to deliver exceptional results.",
+      "hobbies": [
+        "Gaming",
+        "Soccer",
+        "Basketball",
+        "Friends",
+        "Family"
+      ],
+      "hardSkills": [
+        "Web Development",
+        "Web Design",
+        "Salesforce"
+      ],
+      "softSkills": [
+        "Proactive",
+        "Communicative",
+        "Team work",
+        "Fast learner",
+        "Passionate"
+      ]
+    },
+    "experience": {
+      "title": "Professional Experience",
+      "unimed": {
+        "date": "01/2023 - present",
+        "title": "Salesforce Sales Cloud Administrator and Support Intern",
+        "subtitle": "Unimed Fortaleza",
+        "topics": [
+          "User acess, object and profile administration",
+          "Validation rules, record types, layouts, permissions",
+          "User support, error debug, tickets managment with Jira"
+        ],
+        "tags": [
+          "Salesforce SC",
+          "Administration",
+          "Jira",
+          "Client support",
+          "Tickets managment"
+        ]
+      },
+      "portfolio": {
+        "date": "07/2022 - 01/2023",
+        "title": "Salesforce Sales Cloud Software Developer Intern",
+        "subtitle": "Grupo Portfólio",
+        "topics": [
+          "User acess, object and profile administration",
+          "Validation rules, record types, layouts, permissions",
+          "Flows, Apex and LWC creation, debug and manipulation"
+        ],
+        "tags": [
+          "Salesforce SC",
+          "LWC",
+          "Jest",
+          "Apex",
+          "Flow",
+          "SOQL",
+          "Postman"
+        ]
+      }
+    },
+    "education": {
+      "title": "Education",
+      "unifor": {
+        "date": "01/2022 - present",
+        "title": "Technologist in Systems Analysis and Development",
+        "subtitle": "Universidade de Fortaleza - UNIFOR",
+        "tags": [
+          "Node.js",
+          "React.js",
+          "React Native",
+          "TailwindCSS",
+          "MongoDB",
+          "Jira",
+          "PostgreSQL",
+          "Vercel"
+        ]
+      },
+      "ifce": {
+        "date": "01/2018 - 12/2021",
+        "title": "Integrated Technical High School in Informatics",
+        "subtitle": "Instituto Federal de Educação, Ciência e Tecnologia do Ceará, IFCE",
+        "tags": [
+          "Python",
+          "Flask",
+          "Postman",
+          "PHP",
+          "Java",
+          "MySQL",
+          "Bootstrap",
+          "C"
+        ]
+      }
+    }
+  },
+  "certificates": {
+    "title": "Certificates",
+    "description": "During my <1>journey</1>, I’ve earned a variaty of certificates in web development, Salesforce, and design. I firmly believe in the power of continuous learning—constantly <3>seeking new knowledge and refining my skills.</3> These certifications represent my <5>commitment to growth</5> and excellence in the ever-evolving world of technology.",
+    "details": "Ver detalhes"
+  },
+  "contact": {
+    "title": "Get in touch!",
+    "description": "Want to tell me something? Write here!",
+    "inputs": {
+      "name": "Enter your name",
+      "email": "Enter your email address",
+      "message": "Go ahead and type your message! I’m glad to hear from you :)",
+      "button": "Submit"
+    }
+  }
+}

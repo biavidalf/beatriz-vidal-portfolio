@@ -50,8 +50,13 @@ export default function Navbar() {
         {items.map((item, index) => {
           return (
             item != "contact" && (
-              <Typography as="li" className="p-1 font-medium" key={index}>
+              <Typography
+                as="li"
+                className="p-1 text-sm font-medium"
+                key={index}
+              >
                 <a
+                  target="_blank"
                   href={`#`}
                   className="flex items-center transition-colors hover:text-purple-main"
                 >
@@ -61,7 +66,7 @@ export default function Navbar() {
             )
           );
         })}
-        <li className="mt-3">
+        <li className="mt-3 lg:mt-0">
           <button
             onClick={handleChangeLanguage}
             className="relative flex h-[26px] w-14 items-center justify-between rounded-full border border-purple-main py-1 text-sm font-medium text-purple-main"
@@ -93,7 +98,7 @@ export default function Navbar() {
       className="sticky top-0 z-50 border-none bg-[#27243C]/60"
     >
       <div className="m-auto flex w-full items-center justify-between text-blue-gray-900 *:text-gray-100 lg:max-w-7xl">
-        <a href="#">
+        <a target="_blank" href="#">
           <img src={Logo} alt="" />
         </a>
         <div className="hidden lg:block">

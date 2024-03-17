@@ -1,10 +1,12 @@
-import { projects } from "src/data/projects";
+import enProjects from "src/locales/en/projects.json";
 
-export const nextProject = (currentIndex) => {
-  console.log(currentIndex, projects.length);
-  if (currentIndex === projects.length - 1) {
-    return 0;
-  } else {
-    return ++currentIndex;
-  }
+export const findNextProject = (currentId) => {
+  const projectsIds = Object.keys(enProjects["projectsList"]);
+  const currentIndex = projectsIds.findIndex((key) => key == currentId);
+
+  if (isLastIndex(currentIndex, projectsIds)) return projectsIds[0];
+
+  return projectsIds[currentIndex + 1];
 };
+
+const isLastIndex = (current, total) => current === total.length - 1;

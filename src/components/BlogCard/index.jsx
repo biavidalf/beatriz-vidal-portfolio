@@ -44,7 +44,7 @@ export function BlogCard() {
         </div>
       </CardBody>
       <CardFooter className="flex items-center">
-        <a href="#" className="inline-block">
+        <a target="_blank" href="#" className="inline-block">
           <Button
             size="sm"
             variant="text"

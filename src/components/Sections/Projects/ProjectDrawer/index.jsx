@@ -3,15 +3,17 @@ import { useRef } from "react";
 import { Drawer, Typography, Button } from "@material-tailwind/react";
 import { Link } from "lucide-react";
 import ProjectCarousel from "../ProjectCarousel";
-import { projects } from "src/data/projects";
 import { useCurrentProject } from "src/contexts/currentProject";
-import { nextProject } from "../../../../utils/nextProject";
+import { findNextProject } from "../../../../utils/nextProject";
 import { resetScrollPosition } from "../../../../utils/resetScrollPosition";
 
 import IconArrowLeft from "src/assets/icons/arrow-left.svg";
 import IconArrowRight from "src/assets/icons/arrow-right.svg";
+import { useTranslation } from "react-i18next";
 
 export default function ProjectDrawer({ setOpenRight, openRight }) {
+  const { t } = useTranslation();
+  const projects = t("projectsList", { returnObjects: true });
   const drawerRef = useRef();
 
   const { currentProject, setCurrentProject } = useCurrentProject();
@@ -23,7 +25,7 @@ export default function ProjectDrawer({ setOpenRight, openRight }) {
   };
 
   const goToNextProject = () => {
-    const nextProjectId = nextProject(currentProject);
+    const nextProjectId = findNextProject(currentProject);
     setCurrentProject(nextProjectId);
     resetScrollPosition(drawerRef);
   };
@@ -36,7 +38,7 @@ export default function ProjectDrawer({ setOpenRight, openRight }) {
       open={openRight}
       onClose={closeDrawerRight}
       size={650}
-      className="scrollbar-none overflow-auto bg-bg-purple-dark px-6 py-6 text-blue-gray-100"
+      className="overflow-auto bg-bg-purple-dark px-6 py-6 text-blue-gray-100 scrollbar-none"
     >
       <button
         onClick={closeDrawerRight}
@@ -49,7 +51,7 @@ export default function ProjectDrawer({ setOpenRight, openRight }) {
         <ProjectCarousel images={images} idProject={id} />
 
         <Typography variant="h4" className="-my-5">
-          <a target="_blank" href="https://github.com/biavidalf/phais-plus">
+          <a target="_blank" href={github}>
             {fullTitle}
           </a>
         </Typography>
@@ -73,7 +75,8 @@ export default function ProjectDrawer({ setOpenRight, openRight }) {
 
           <div className="text-lg">
             <a
-              href="https://github.com/biavidalf/phais-plus"
+              target="_blank"
+              href={github}
               className="flex flex-row-reverse items-center justify-end gap-2"
             >
               {github}

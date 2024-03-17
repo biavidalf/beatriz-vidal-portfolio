@@ -1,7 +1,8 @@
-import { Code2, Play, MessageSquareMore, Dot } from "lucide-react";
-import { TextHighlight, SectionTitle, SectionSubtitle } from "../../Text";
-import { Chip } from "@material-tailwind/react";
+import { Code2, Play, MessageSquareMore } from "lucide-react";
+import { TextHighlight, SectionTitle } from "../../Text";
 import { useTranslation, Trans } from "react-i18next";
+import AboutSection from "./AboutSection";
+import AboutSectionItem from "./AboutSection/AboutSectionItem";
 
 export default function About() {
   const { t } = useTranslation("", { keyPrefix: "about" });
@@ -13,8 +14,8 @@ export default function About() {
   const education = t("education", { returnObjects: true });
 
   return (
-    <section id="about" className="flex flex-col gap-8">
-      <SectionTitle content={t("title")} />
+    <section id="about" className="flex flex-col gap-32">
+      <SectionTitle content={t("title")} className="-mb-24" />
       <AboutSection title={t("intro.title")}>
         <div className="flex flex-col gap-5 text-justify text-lg text-gray-100/85 lg:text-xl">
           <p>
@@ -41,7 +42,11 @@ export default function About() {
 
         <div className="mt-2 space-y-4">
           <div className="flex items-center gap-4 rounded border border-stroke bg-bg-glass/50 px-7 py-4">
-            <Code2 size={30} className="text-purple-main" />
+            <img
+              src={"src/assets/icons/animated/code.gif"}
+              alt=""
+              className="w-7"
+            />
             <ul className="flex flex-row flex-wrap gap-x-3 gap-y-1">
               {hardSkills.map((skill, index) => {
                 return <li key={index}>{skill}</li>;
@@ -50,7 +55,11 @@ export default function About() {
           </div>
 
           <div className="flex items-center gap-4 rounded border border-stroke bg-bg-glass/50 px-7 py-4">
-            <Play size={30} className="text-purple-main" />
+            <img
+              src={"src/assets/icons/animated/play.gif"}
+              alt=""
+              className="w-7"
+            />
             <ul className="flex flex-row flex-wrap gap-x-3 gap-y-1">
               {hobbies.map((hobby, index) => {
                 return <li key={index}>{hobby}</li>;
@@ -59,7 +68,11 @@ export default function About() {
           </div>
 
           <div className="flex items-center gap-4 rounded border border-stroke bg-bg-glass/50 px-7 py-4">
-            <MessageSquareMore size={30} className="text-purple-main" />
+            <img
+              src={"src/assets/icons/animated/chat.gif"}
+              alt=""
+              className="w-7"
+            />
             <ul className="flex flex-row flex-wrap gap-x-3 gap-y-1">
               {softSkills.map((skill, index) => {
                 return <li key={index}>{skill}</li>;
@@ -90,61 +103,5 @@ export default function About() {
         </div>
       </AboutSection>
     </section>
-  );
-}
-
-function AboutSection({ id, title, children, className }) {
-  return (
-    <div id={id} className={`flex flex-col gap-6 ${className}`}>
-      <SectionSubtitle content={title} />
-      {children}
-    </div>
-  );
-}
-
-function AboutSectionItem({
-  data: { date, title, subtitle, topics, tags },
-  active = false,
-}) {
-  return (
-    <div className="flex flex-row flex-wrap gap-x-11 gap-y-2">
-      {" "}
-      {active ? (
-        <TextHighlight className="text-lg lg:text-xl">{date}</TextHighlight>
-      ) : (
-        <strong className="text-lg font-normal lg:text-xl">
-          07/2022 - 01/2023
-        </strong>
-      )}
-      <div className="">
-        <h2 className="text-xl">{title}</h2>
-        <h4 className="text-lg text-gray-400">{subtitle}</h4>
-        {topics && (
-          <ul className="mt-3 pl-1 text-gray-300 lg:mt-1">
-            {topics.map((topic, index) => {
-              return (
-                <li key={index} className="flex gap-x-1 lg:items-center">
-                  <Dot />
-                  {topic}
-                </li>
-              );
-            })}
-          </ul>
-        )}
-
-        <div className="mt-3 flex flex-row flex-wrap gap-2">
-          {tags.map((tag, index) => {
-            return (
-              <Chip
-                size="sm"
-                value={tag}
-                key={index}
-                className="w-fit bg-bg-purple-hover text-sm font-normal normal-case text-gray-300"
-              />
-            );
-          })}
-        </div>
-      </div>
-    </div>
   );
 }

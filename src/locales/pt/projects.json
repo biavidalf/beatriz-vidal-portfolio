@@ -1,0 +1,111 @@
+{
+  "projectsList": {
+    "phais-plus": {
+      "id": "phais-plus",
+      "title": "Phais+",
+      "fullTitle": "PHAIS+ hi Pharmaceutical System",
+      "description": [
+        "Sistema farmacêutico que gerencia a troca de medicamentos entre hospitais por meio de solicitações/tickets.",
+        "Seu objetivo é ajudar os hospitais a reduzir o desperdício de medicamentos, que muitas vezes são descartados devido ao vencimento e outros fatores.",
+        "Design criado do zero, prototipagem pelo figma e css com TailwindCSS. Desenvolvido utilizando React.js, Node.js, e PostgreSQL."
+      ],
+      "stack": ["react", "node", "postgre", "docker", "figma"],
+      "github": "https://github.com/biavidalf/phais-plus",
+      "images": [
+        "admin.png",
+        "cadastro.png",
+        "estoque.png",
+        "medicamentos.png",
+        "solicitacao.png",
+        "solicitacoes.png"
+      ],
+      "coverUrl": "cadastro.png",
+      "type": "web"
+    },
+    "bbcs": {
+      "id": "bbcs",
+      "title": "Bring Back Coffee",
+      "fullTitle": "Bring Back Coffee Shop",
+      "description": [
+        "E-commerce for a Vintage Cafeteria, you can log in and put the items of your choice in your cart!",
+        "Projeto do meu último ano no ensino médio integrado com técnico em informática, em 2021. Duas semanas intensas de aprendizado, nas quais lidei com novos erros, estudei diferentes documentações, procurei referências/erros, implementei sessões de navegador, aprendi a usar bibliotecas externas e aprofundei meus conhecimentos acerca do ecossistema python/flask e arquitetura MVC.",
+        "Desenvolvimento feito em Python com o framework Flask e o banco de dados SQLite, e estilização em Bootstrap."
+      ],
+      "stack": ["python", "flask", "sqlite", "bootstrap"],
+      "github": "https://github.com/biavidalf/BringBackCoffeeShop",
+      "images": [
+        "banner.png",
+        "carrinho.gif",
+        "home.gif",
+        "produto_individual.gif"
+      ],
+      "coverUrl": "banner.png",
+      "type": "web"
+    },
+    "jpd": {
+        "id": "jpd",
+        "title": "JPD Landing Page",
+        "fullTitle": "JPD Landing Page",
+        "description": [
+            "Landing Page para divulgação da ONG Jovens pela Diferença. Junção de informações sobre a associação em um só lugar.",
+            "Conta com seções para apresentar a ong (missão, valores, formas de atuação, equipes) e seus dados importantes (quantidade de voluntários, anos de funcionamento), mostrar os planos de parceria, conhecer a direção, divulgar as redes e fornecer um meio rápido de contato.",
+            "Aplicação feita em dois dias através de pesquisas de referências e templates acessíveis e responsivos, de acordo com a necessidade da mesma.",
+            "Desenvolvimento Front-end realizado com React.js. Estilização utilizando o framework TailwindCSS juntamente com componentes do HyperUI e MambaUI. Deploy através do Vercel."
+        ],
+        "stack": ["react", "tailwind"],
+        "github": "https://github.com/biavidalf/BringBackCoffeeShop",
+        "deploy": "https://jpd.vercel.app",
+        "images": ["hero.png", "about.png", "operation.png", "acting.png", "plans.png", "plans2.png", "team.png", "contact.png"],
+        "coverUrl": "hero.png",
+        "type": "web"
+    },
+    "elderCare": {
+        "id": "elderCare",
+        "title": "Elder Care",
+        "fullTitle": "Elder Care App",
+        "description": [
+            "Aplicativo de celular para dar assistência a pessoas que estão cuidando de idosos.",
+            "O aplicativo fornece um conjunto de funcionalidades, como lista de afazeres para cada dia da semana, lista personalizável de cuidados gerais, seção de alimentação para registrar preferências e restrições, e listagem de medicamentos com suas respectivas informações, como dosagem máxima diária",
+            "Os medicamentos ficam disponíveis para serem adicionados a lista diária, podendo ser ajustado seus horários e dosagens.",
+            "Prototipação feita pelo figma e desenvolvimento realizado com React Native e Firebase."
+        ],
+        "stack": ["react", "css", "firebase", "figma"],
+        "github": "https://github.com/biavidalf/elder-care",
+        "images": ["elderCare.png"],
+        "coverUrl": "elderCare.png",
+        "type": "mobile"
+    },
+    "desafioFuturo": {
+        "id": "desafioFuturo",
+        "title": "Globo Esporte Desafio do Futuro",
+        "fullTitle": "Globo Esporte - Desafio do Futuro",
+        "description": [
+            "Aplicação ganhadora do último episódio do Desafio do Futuro, programa do Globo Esporte que foi ao ar do dia tal a dia tal",
+            "O desafio consistia em realizar o design e front-end de uma aplicação para a listagem dos vídeos do Globo Esporte. Junto com a listagem, cada vídeo deveria vir com uma seção de informações e outra seção com um questionário sobre o vídeo.",
+            "Dinâmica com os apresentadores tal e tal para concluir o desafio e realizar a defesa da aplicação.",
+            "Prototipação feita pelo figma e desenvolvimento em React.js."
+        ],
+        "stack": ["react", "tailwind", "figma"],
+        "github": "https://github.com/biavidalf/elder-care",
+        "images": ["desafioFuturo.png"],
+        "coverUrl": "desafioFuturo.png",
+        "type": "web"
+    },
+    "adapterPlan": {
+      "id": "adapterPlan",
+      "title": "Adapter Plan",
+      "fullTitle": "Adapter Plan - Weekly Planner",
+      "description": [
+        "Planner semanal com interface simples e intuitiva, com cores pasteis e ausência de horas para transmitir tranquilidade.",
+        "Sistema de login e CRUD de tarefas.",
+        "Realizado em grupo no curso técnico em informática, em 2019.",
+        "Prototipação feita pelo figma e desenvolvimento em PHP, MySql e CSS puro."
+      ],
+      "stack": ["php", "mysql", "figma"],
+      "github": "https://github.com/biavidalf/weekly-planner",
+      "images": ["landing.png"],
+      "coverUrl": "landing.png",
+      "type": "web"
+    }
+  }
+}

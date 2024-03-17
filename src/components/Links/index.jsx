@@ -12,7 +12,9 @@ import IconWhatsapp from "src/assets/icons/whatsapp.svg";
 function LinkEstructure({ link, icon, tooltipText }) {
   return (
     <Tooltip content={tooltipText}>
-      <a href={link}>{icon}</a>
+      <a target="_blank" href={link}>
+        {icon}
+      </a>
     </Tooltip>
   );
 }
