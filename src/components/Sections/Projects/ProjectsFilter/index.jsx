@@ -2,13 +2,13 @@ import { Tabs, TabsHeader, Tab, input } from "@material-tailwind/react";
 import { forwardRef } from "react";
 import { useTranslation } from "react-i18next";
 
-const ProjectsFilter = ({ label, type, placeholder }) => {
+const ProjectsFilter = ({ currentFilter, setCurrentFilter }) => {
   const { t } = useTranslation();
 
   const data = [
     {
-      label: "All",
-      value: t("filter.all"),
+      label: t("filter.all").charAt(0).toUpperCase() + t("filter.all").slice(1),
+      value: "all",
     },
     {
       label: "Web",
@@ -25,7 +25,10 @@ const ProjectsFilter = ({ label, type, placeholder }) => {
   ];
 
   return (
-    <Tabs value="all" className="w-full max-w-[60rem] self-start lg:w-2/3">
+    <Tabs
+      value={currentFilter}
+      className="w-full max-w-[60rem] self-start lg:w-2/3"
+    >
       <TabsHeader
         className="bg-transparent"
         indicatorProps={{
@@ -33,7 +36,12 @@ const ProjectsFilter = ({ label, type, placeholder }) => {
         }}
       >
         {data.map(({ label, value }) => (
-          <Tab key={value} value={value} className="text-gray-400">
+          <Tab
+            key={value}
+            value={value}
+            className="text-gray-400"
+            onClick={() => setCurrentFilter(value)}
+          >
             {label}
           </Tab>
         ))}

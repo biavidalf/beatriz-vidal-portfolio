@@ -89,7 +89,7 @@
         "github": "https://github.com/biavidalf/elder-care",
         "images": ["desafioFuturo.png"],
         "coverUrl": "desafioFuturo.png",
-        "type": "web"
+        "type": "mobile"
     },
     "adapterPlan": {
       "id": "adapterPlan",

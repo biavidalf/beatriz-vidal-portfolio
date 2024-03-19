@@ -11,17 +11,27 @@ import { Trans, useTranslation } from "react-i18next";
 
 export default function Projects() {
   const { t } = useTranslation();
-  const [openRight, setOpenRight] = useState(false);
-  const projects = t("projectsList", { returnObjects: true });
 
+  // Projects
   const { currentProject, setCurrentProject } = useCurrentProject();
+  const [currentFilter, setCurrentFilter] = useState("web");
+  const allProjects = t("projectsList", { returnObjects: true });
+  const filteredProjects =
+    currentFilter == "all"
+      ? Object.values(allProjects)
+      : Object.values(allProjects).filter(
+          (project) => project.type == currentFilter,
+        );
+
+  // Drawer
+  const [openRight, setOpenRight] = useState(false);
   const openDrawerRight = () => {
     setOpenRight(true);
   };
 
   // Pagination
   const perPage = 4;
-  const totalPages = Math.ceil(Object.keys(projects).length / perPage);
+  const totalPages = Math.ceil(filteredProjects.length / perPage);
   const [currentPage, setCurrentPage] = useState(0);
 
   return (
@@ -45,10 +55,13 @@ export default function Projects() {
       </div>
 
       <div className="flex flex-col items-center gap-5">
-        <ProjectsFilter />
+        <ProjectsFilter
+          currentFilter={currentFilter}
+          setCurrentFilter={setCurrentFilter}
+        />
 
         <div className="flex w-full flex-col items-center gap-y-5 *:flex-1 lg:flex-row lg:flex-wrap lg:justify-between *:lg:w-[49%] *:lg:flex-none">
-          {Object.values(projects)
+          {filteredProjects
             .slice(currentPage * perPage, perPage * currentPage + 4)
             .map((project, index) => {
               return (
