@@ -1,0 +1,49 @@
+{
+  "certificatesList": {
+    "osf": {
+        "id": "osf",
+        "title": "OSF Academy",
+        "company": "OSF Digital",
+        "description": "Front-end Salesforce Commerce Cloud training powered by the Roman Canadian company OSF Digital",
+        "cover": "osf-academy.png",
+        "link": "https://certificate.osf.digital/70360",
+        "tags": ["5 weeks", "Salesforce CC", "English"]
+    },
+    "hc": {
+        "id": "hc",
+        "title": "Hiring Coders",
+        "company": "VTEX and Gama Academy",
+        "description": "Web Dev and Digital Commerce training program by VTEX and powered by Gama Academy",
+        "cover": "hiring-coders.jpg",
+        "link": "https://media.licdn.com/dms/image/D4D2DAQGuCaVw4aTUVA/profile-treasury-document-cover-images_480/0/1710878967928?e=1711486800&v=beta&t=4kUvY-vYtoh_GlUGCQzEOH0HuPpHxYPGFPvN3AsK2QA",
+        "tags": ["2 months", "120 hours", "FullStack"]
+    },
+    "ta": {
+        "id": "ta",
+        "title": "Tech Academy",
+        "company": "Startse",
+        "description": "Startese's online program with 2 months os duration to train Fullstack Web Developers.",
+        "cover": "startse.webp",
+        "link": "https://lms.startse.com//certificado/v2/62e293e41aa0ba726fbb04c4?studentId=626854f28ca05b167fe99032",
+        "tags": ["2 months", "100 hours", "FullStack"]
+    },
+    "nlw": {
+        "id": "nlw",
+        "title": "NLW Expert React trail",
+        "company": "Rocketseat",
+        "description": "Front-end application development with ReactJS, Typescript, TailwindCSS and Web APIs.",
+        "cover": "nlw.jfif",
+        "link": "https://app.rocketseat.com.br/certificates/57462c88-90d6-428a-bdcf-7aeff4676e49",
+        "tags": ["ReactJS", "Typescript", "Web API"]
+    },
+    "deploy": {
+        "id": "deploy",
+        "title": "Workshop UI Design e Figma ",
+        "company": "Deploy UX",
+        "description": "5 hours workshop to enhance UI design skills, during witch I designed a mobile application for managing money pools",
+        "cover": "deploy.jfif",
+        "link": "https://www.linkedin.com/in/beatriz-vidal-bf4/details/certifications/1710878844968/single-media-viewer?type=DOCUMENT&profileId=ACoAADNGPcMBRjIUJcqtfiQaMscXcB5pq620L_Y&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BsJ08xp%2B0S6CJEQPjpP%2BT6A%3D%3D",
+        "tags": ["Design UI", "Figma", "Workshop"]
+    }
+  }
+}

@@ -1,35 +1,21 @@
 import { SectionTitle, TextHighlight } from "../../Text";
-import Tag from "../../Tag";
 import { BlogCard } from "../../BlogCard";
 import Pagination from "../../Pagination";
 
-import OsfAcademy from "../../../assets/courses/osf-academy.png";
 import { IconButton } from "@material-tailwind/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslation, Trans } from "react-i18next";
-
-function Certificate() {
-  return (
-    <div className="overflow-clip rounded-md border border-stroke bg-bg-glass/40 lg:w-1/2">
-      <img src={OsfAcademy} alt="" />
-      <div className="p-6">
-        <h1 className="text-xl font-medium lg:text-2xl">OSF Academy</h1>
-        <p className="mt-2 lg:text-lg">
-          Salesforce Commerce Cloud training by the canadian roman company OSF
-          Digital
-        </p>
-        <div className="mt-4 flex flex-row flex-wrap gap-2">
-          <Tag content="5 weeks" />
-          <Tag content="english" />
-          <Tag content="salesforce" />
-        </div>
-      </div>
-    </div>
-  );
-}
+import { useState } from "react";
 
 export default function Certificates() {
   const { t } = useTranslation();
+
+  const certificates = Object.values(
+    t("certificatesList", { returnObjects: true }),
+  );
+  const perPage = 2;
+  const totalPages = Math.ceil(certificates.length / perPage);
+  const [currentPage, setCurrentPage] = useState(0);
 
   return (
     <section
@@ -58,20 +44,45 @@ export default function Certificates() {
             <IconButton
               size="sm"
               className="bg-transparent text-gray-300 hover:bg-bg-purple-hover focus:ring-purple-main"
+              disabled={currentPage === 0}
             >
-              <ChevronLeft size={24} />
+              <ChevronLeft
+                size={24}
+                onClick={() =>
+                  currentPage != 0 && setCurrentPage(currentPage - 1)
+                }
+              />
             </IconButton>
           )}
-          <BlogCard />
-          <BlogCard />
+          {certificates &&
+            certificates
+              .slice(currentPage * perPage, perPage * currentPage + perPage)
+              .map((certificate, index) => {
+                console.log(certificate);
+                return (
+                  <BlogCard certificate={certificate} key={certificate.id} />
+                );
+              })}
           {window.innerWidth <= 960 ? (
-            <Pagination className="self-center" />
+            <Pagination
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              total={totalPages}
+              className="self-center"
+            />
           ) : (
             <IconButton
               size="sm"
               className="bg-transparent text-gray-300 hover:bg-bg-purple-hover focus:ring-purple-main"
+              disabled={currentPage === totalPages - 1}
             >
-              <ChevronRight size={24} />
+              <ChevronRight
+                size={24}
+                onClick={() =>
+                  currentPage != totalPages - 1 &&
+                  setCurrentPage(currentPage + 1)
+                }
+              />
             </IconButton>
           )}
         </div>

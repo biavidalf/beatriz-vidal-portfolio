@@ -1,0 +1,49 @@
+{
+  "certificatesList": {
+    "osf": {
+        "id": "osf",
+        "title": "OSF Academy",
+        "company": "OSF Digital",
+        "description": "Treinamento Front-end Salesforce Commerce Cloud pela empresa Romano Canadense OSF Digital.",
+        "cover": "osf-academy.png",
+        "link": "https://certificate.osf.digital/70360",
+        "tags": ["5 weeks", "Salesforce CC", "English"]
+    },
+    "hc": {
+        "id": "hc",
+        "title": "Hiring Coders",
+        "company": "VTEX e Gama Academy",
+        "description": "Treinamento de Desenvolvimento Web e Digital Commerce pela VTEX e Gama Academy.",
+        "cover": "hiring-coders.jpg",
+        "link": "https://media.licdn.com/dms/image/D4D2DAQGuCaVw4aTUVA/profile-treasury-document-cover-images_480/0/1710878967928?e=1711486800&v=beta&t=4kUvY-vYtoh_GlUGCQzEOH0HuPpHxYPGFPvN3AsK2QA",
+        "tags": ["2 meses", "120 horas","FullStack"]
+    },
+    "ta": {
+        "id": "ta",
+        "title": "Tech Academy",
+        "company": "Startse",
+        "description": "Treinamento online da Startse com 2 meses de duração para formar desenvolvedores Fullstack.",
+        "cover": "startse.webp",
+        "link": "https://lms.startse.com//certificado/v2/62e293e41aa0ba726fbb04c4?studentId=626854f28ca05b167fe99032",
+        "tags": ["2 meses", "100 horas", "FullStack"]
+    },
+    "nlw": {
+        "id": "nlw",
+        "title": "NLW Expert trilha de React",
+        "company": "Rocketseat",
+        "description": "Desenvolvimento de uma aplicação front-end com ReactJS, Typescript, TailwindCSS e APIs da Web.",
+        "cover": "nlw.jfif",
+        "link": "https://app.rocketseat.com.br/certificates/57462c88-90d6-428a-bdcf-7aeff4676e49",
+        "tags": ["ReactJS", "Typescript", "Web API"]
+    },
+    "deploy": {
+        "id": "deploy",
+        "title": "Workshop UI Design e Figma ",
+        "company": "Deploy UX",
+        "description": "Workshop de 5 horas para aperfeiçoar Design UI, no qual foi desenvolvido um aplicativo de gerenciamento de cotas monetárias.",
+        "cover": "deploy.jfif",
+        "link": "https://www.linkedin.com/in/beatriz-vidal-bf4/details/certifications/1710878844968/single-media-viewer?type=DOCUMENT&profileId=ACoAADNGPcMBRjIUJcqtfiQaMscXcB5pq620L_Y&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BsJ08xp%2B0S6CJEQPjpP%2BT6A%3D%3D",
+        "tags": ["Design UI", "Figma", "Workshop"]
+    }
+  }
+}
