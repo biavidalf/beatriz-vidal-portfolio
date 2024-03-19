@@ -38,7 +38,7 @@ function Hero() {
     <>
       <header
         id="hero"
-        className="4xl:max-w-6xl relative m-auto flex h-screen flex-col items-center gap-16 px-7 py-6 md:w-full md:max-w-5xl md:justify-evenly"
+        className="4xl:max-w-6xl relative z-10 m-auto flex h-screen flex-col items-center gap-16 px-7 py-6 md:w-full md:max-w-5xl md:justify-evenly"
       >
         <nav className="flex w-full flex-wrap items-center justify-between sm:hidden">
           <img src={Logo} alt="Beatriz Vidal Logo" />
@@ -214,6 +214,14 @@ function Hero() {
           pdfPath="resume/BeatrizVidalCurriculo.pdf"
         />
       </header>
+
+      <div className="absolute left-0 top-0 z-0 h-screen w-full overflow-hidden">
+        <img
+          src="/bg-hero.svg"
+          alt=""
+          className="circle w-42 blur-2xl lg:w-[600px]"
+        />
+      </div>
     </>
   );
 }

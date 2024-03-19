@@ -25,7 +25,8 @@ export default withMT({
       },
       backgroundImage: {
         "bg-mesh": "url('/mesh.png')",
-        "bg-intro": "url('/bg-intro.png')"
+        "bg-intro": "url('/bg-intro.png')",
+        "bg-hero": "url('/bg-hero.svg')"
       },
     },
     animation: {

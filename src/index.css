@@ -16,3 +16,25 @@ body {
     animation-play-state: paused;
   }
 }
+
+@keyframes circular-motion {
+  0% {
+    transform: translate(0, 30%) rotate(0deg);
+  }
+  25% {
+    transform: translate(30%, 0) rotate(90deg);
+  }
+  50% {
+    transform: translate(100%, 20%) rotate(180deg);
+  }
+  75% {
+    transform: translate(30%, 40%) rotate(270deg);
+  }
+  100% {
+    transform: translate(0, 30%) rotate(360deg);
+  }
+}
+
+.circle {
+  animation: circular-motion 10s infinite linear;
+}
