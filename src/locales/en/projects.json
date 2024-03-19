@@ -115,6 +115,38 @@
       "images": ["landing.png"],
       "coverUrl": "landing.png",
       "type": "web"
+    },
+    "desafioFuturo2": {
+      "id": "desafioFuturo",
+      "title": "Globo Esporte Desafio do Futuro",
+      "fullTitle": "Globo Esporte - Desafio do Futuro",
+      "description": [
+        "The winning application from the latest episode of the Desafio do Futuro (Future Challenge), a program on Globo Esporte, aired on a specific date.",
+        "The challenge involved designing and implementing the front-end for an application that lists Globo Esporte videos. Each video was required to have an information section and a questionnaire section.",
+        "The dynamic involved working with presenters to complete the challenge and defend the application.",
+        "Prototyping was done using Figma, and development was carried out in React.js."
+      ],
+      "stack": ["react", "tailwind", "figma"],
+      "github": "https://github.com/biavidalf/elder-care",
+      "images": ["desafioFuturo.png"],
+      "coverUrl": "desafioFuturo.png",
+      "type": "web"
+    },
+    "adapterPlan2": {
+      "id": "adapterPlan",
+      "title": "Adapter Plan",
+      "fullTitle": "Adapter Plan - Weekly Planner",
+      "description": [
+        "Weekly planner with a simple and intuitive interface, featuring pastel colors and an absence of hours to convey tranquility.",
+        "Login system and task CRUD (Create, Read, Update, Delete).",
+        "Developed in a group during the informatics technical course in 2019.",
+        "Prototyping done using Figma and development in PHP, MySql, and pure CSS."
+      ],
+      "stack": ["php", "mysql", "figma"],
+      "github": "https://github.com/biavidalf/weekly-planner",
+      "images": ["landing.png"],
+      "coverUrl": "landing.png",
+      "type": "web"
     }
   }
 }

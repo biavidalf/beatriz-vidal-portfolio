@@ -22,33 +22,33 @@ export default function Contact() {
 
           <form className="flex flex-col gap-3">
             <label
-              for="userName"
-              class="relative block overflow-hidden rounded border border-transparent bg-[#27243C]/60 px-3 pt-3 shadow-sm  focus-within:ring-1 focus-within:ring-purple-main"
+              htmlFor="userName"
+              className="relative block overflow-hidden rounded border border-transparent bg-[#27243C]/60 px-3 pt-3 shadow-sm  focus-within:ring-1 focus-within:ring-purple-main"
             >
               <input
                 type="text"
                 id="userName"
                 placeholder={t("contact.inputs.name")}
-                class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                className="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
               />
 
-              <span class="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs">
+              <span className="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs">
                 {t("contact.inputs.name")}
               </span>
             </label>
 
             <label
-              for="userEmail"
-              class="relative block overflow-hidden rounded border border-transparent bg-[#27243C]/60 px-3 pt-3 shadow-sm  focus-within:ring-1 focus-within:ring-purple-main"
+              htmlFor="userEmail"
+              className="relative block overflow-hidden rounded border border-transparent bg-[#27243C]/60 px-3 pt-3 shadow-sm  focus-within:ring-1 focus-within:ring-purple-main"
             >
               <input
                 type="email"
                 id="userEmail"
                 placeholder={t("contact.inputs.email")}
-                class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                className="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
               />
 
-              <span class="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs">
+              <span className="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs">
                 {t("contact.inputs.email")}
               </span>
             </label>

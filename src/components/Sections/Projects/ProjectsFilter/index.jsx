@@ -1,7 +1,8 @@
-import { Tabs, TabsHeader, Tab } from "@material-tailwind/react";
+import { Tabs, TabsHeader, Tab, input } from "@material-tailwind/react";
+import { forwardRef } from "react";
 import { useTranslation } from "react-i18next";
 
-export default function ProjectsFilter() {
+const ProjectsFilter = ({ label, type, placeholder }) => {
   const { t } = useTranslation();
 
   const data = [
@@ -39,4 +40,6 @@ export default function ProjectsFilter() {
       </TabsHeader>
     </Tabs>
   );
-}
+};
+
+export default ProjectsFilter;

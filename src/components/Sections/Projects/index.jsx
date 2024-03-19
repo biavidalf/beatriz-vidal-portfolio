@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import { SectionTitle, TextHighlight } from "../../Text";
 import ProjectsFilter from "./ProjectsFilter";
@@ -19,9 +19,14 @@ export default function Projects() {
     setOpenRight(true);
   };
 
+  // Pagination
+  const perPage = 4;
+  const totalPages = Math.ceil(Object.keys(projects).length / perPage);
+  const [currentPage, setCurrentPage] = useState(0);
+
   return (
     <section id="projects" className="flex flex-col gap-8 py-24 sm:py-0">
-      <div className="space-y-3">
+      <div id="filter" className="space-y-3">
         <SectionTitle content={t("projects.title")} className="mb-1" />
         <p className="text-justify text-lg text-gray-100/75 lg:text-xl">
           <Trans i18nKey="projects.description">
@@ -43,19 +48,25 @@ export default function Projects() {
         <ProjectsFilter />
 
         <div className="flex w-full flex-col items-center gap-y-5 *:flex-1 lg:flex-row lg:flex-wrap lg:justify-between *:lg:w-[49%] *:lg:flex-none">
-          {Object.entries(projects).map(([key, project]) => {
-            return (
-              <Project
-                key={key}
-                openView={openDrawerRight}
-                project={project}
-                idInList={key}
-              />
-            );
-          })}
+          {Object.values(projects)
+            .slice(currentPage * perPage, perPage * currentPage + 4)
+            .map((project, index) => {
+              return (
+                <Project
+                  key={index}
+                  openView={openDrawerRight}
+                  project={project}
+                  idInList={index}
+                />
+              );
+            })}
         </div>
 
-        <Pagination />
+        <Pagination
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          total={totalPages}
+        />
       </div>
 
       {currentProject != null && (
