@@ -10,6 +10,7 @@ import { resetScrollPosition } from "../../../../utils/resetScrollPosition";
 import IconArrowLeft from "src/assets/icons/arrow-left.svg";
 import IconArrowRight from "src/assets/icons/arrow-right.svg";
 import { useTranslation } from "react-i18next";
+import { getImageURL } from "../../../../utils/imageURL";
 
 export default function ProjectDrawer({
   setOpenRight,
@@ -103,7 +104,9 @@ export default function ProjectDrawer({
                 >
                   <img
                     key={`${technology}-icon`}
-                    src={`src/assets/icons/technologies/icon-${technology}.svg`}
+                    src={getImageURL(
+                      `icons/technologies/icon-${technology}.svg`,
+                    )}
                     alt={`${technology} icon`}
                     className="w-7"
                   />
