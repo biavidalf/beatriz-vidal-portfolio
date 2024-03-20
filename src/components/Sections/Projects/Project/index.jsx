@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useCurrentProject } from "src/contexts/currentProject";
+import { getImageURL } from "src/utils/imageURL.jsx";
 
 export default function Project({
   openView,
@@ -19,7 +20,7 @@ export default function Project({
       className="relative cursor-pointer overflow-hidden rounded-md transition duration-500 ease-in-out hover:scale-105 "
     >
       <img
-        src={`src/assets/projects/${id}/${coverUrl}`}
+        src={getImageURL(`projects/${id}/${coverUrl}`)}
         alt={id}
         className=""
       />
@@ -30,7 +31,7 @@ export default function Project({
             return (
               <img
                 key={index}
-                src={`src/assets/icons/technologies/icon-${technology}.svg`}
+                src={getImageURL(`icons/technologies/icon-${technology}.svg`)}
                 alt={`${technology} icon`}
                 className="w-6"
               />
