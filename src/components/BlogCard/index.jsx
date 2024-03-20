@@ -9,6 +9,7 @@ import {
 
 import Tag from "../Tag";
 import { useTranslation } from "react-i18next";
+import { getImageURL } from "src/utils/imageURL";
 
 export function BlogCard({ certificate: { id, cover, link } }) {
   const { t } = useTranslation();
@@ -22,7 +23,7 @@ export function BlogCard({ certificate: { id, cover, link } }) {
         className="m-0 h-52 w-full rounded-none"
       >
         <img
-          src={`src/assets/courses/${cover}`}
+          src={getImageURL(`courses/${cover}`)}
           alt={t(`certificatesList.${id}.title`)}
           className="h-full w-full object-cover"
         />

@@ -1,5 +1,6 @@
 import { Carousel, IconButton } from "@material-tailwind/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { getImageURL } from "../../../../utils/imageURL";
 
 export default function ProjectCarousel({ images, idProject }) {
   return (
@@ -48,7 +49,7 @@ export default function ProjectCarousel({ images, idProject }) {
       {images.map((image, index) => {
         return (
           <img
-            src={`src/assets/projects/${idProject}/${image}`}
+            src={getImageURL(`projects/${idProject}/${image}`)}
             alt={`${idProject} ${image}`}
             key={index}
             className="h-full w-full object-cover"

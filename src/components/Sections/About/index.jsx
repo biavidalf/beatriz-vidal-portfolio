@@ -3,6 +3,7 @@ import { TextHighlight, SectionTitle } from "../../Text";
 import { useTranslation, Trans } from "react-i18next";
 import AboutSection from "./AboutSection";
 import AboutSectionItem from "./AboutSection/AboutSectionItem";
+import { getImageURL } from "../../../utils/imageURL";
 
 export default function About() {
   const { t } = useTranslation("", { keyPrefix: "about" });
@@ -51,7 +52,7 @@ export default function About() {
             <div className="mt-2 space-y-4">
               <div className="flex items-center gap-4 rounded border border-stroke bg-bg-glass/50 px-7 py-4">
                 <img
-                  src={"src/assets/icons/animated/code.gif"}
+                  src={getImageURL("icons/animated/code.gif")}
                   alt=""
                   className="w-7"
                 />
@@ -64,7 +65,7 @@ export default function About() {
 
               <div className="flex items-center gap-4 rounded border border-stroke bg-bg-glass/50 px-7 py-4">
                 <img
-                  src={"src/assets/icons/animated/play.gif"}
+                  src={getImageURL("icons/animated/play.gif")}
                   alt=""
                   className="w-7"
                 />
@@ -77,7 +78,7 @@ export default function About() {
 
               <div className="flex items-center gap-4 rounded border border-stroke bg-bg-glass/50 px-7 py-4">
                 <img
-                  src={"src/assets/icons/animated/chat.gif"}
+                  src={getImageURL("icons/animated/chat.gif")}
                   alt=""
                   className="w-7"
                 />
@@ -91,7 +92,7 @@ export default function About() {
           </AboutSection>
         </div>
 
-        <div className="bg-mesh-elipse mt-10 space-y-32 bg-left-bottom bg-no-repeat">
+        <div className="mt-10 space-y-32 bg-mesh-elipse bg-left-bottom bg-no-repeat">
           <AboutSection
             id="experience"
             title={professionalExperiences["title"]}

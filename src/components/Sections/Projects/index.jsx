@@ -69,7 +69,7 @@ export default function Projects() {
                   key={index}
                   openView={openDrawerRight}
                   project={project}
-                  idInList={index}
+                  idInList={project.id}
                 />
               );
             })}
