@@ -9,7 +9,7 @@ export default function Intro() {
   return (
     <section
       id="intro"
-      className="bg-bg-intro flex h-screen w-full !max-w-none flex-col items-center bg-bottom bg-no-repeat pt-28 sm:-mb-10"
+      className="-mb-20 flex h-screen w-full !max-w-none flex-col items-center bg-bg-intro bg-bottom bg-no-repeat pt-28"
     >
       <div className="mx-auto w-full space-y-8 lg:max-w-5xl">
         <div className="flex flex-col items-center gap-4 py-14 md:flex-row md:gap-12">

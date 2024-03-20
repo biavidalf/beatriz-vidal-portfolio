@@ -14,7 +14,7 @@ export default function Projects() {
 
   // Projects
   const { currentProject, setCurrentProject } = useCurrentProject();
-  const [currentFilter, setCurrentFilter] = useState("web");
+  const [currentFilter, setCurrentFilter] = useState("all");
   const allProjects = t("projectsList", { returnObjects: true });
   const filteredProjects =
     currentFilter == "all"
@@ -35,7 +35,7 @@ export default function Projects() {
   const [currentPage, setCurrentPage] = useState(0);
 
   return (
-    <section id="projects" className="flex flex-col gap-8 pt-24 sm:py-0">
+    <section id="projects" className="flex flex-col gap-8 pt-24">
       <div id="filter" className="space-y-3">
         <SectionTitle content={t("projects.title")} className="mb-1" />
         <p className="text-justify text-lg text-gray-100/75 lg:text-xl">
@@ -83,7 +83,11 @@ export default function Projects() {
       </div>
 
       {currentProject != null && (
-        <ProjectDrawer openRight={openRight} setOpenRight={setOpenRight} />
+        <ProjectDrawer
+          openRight={openRight}
+          setOpenRight={setOpenRight}
+          projectsValues={filteredProjects}
+        />
       )}
     </section>
   );

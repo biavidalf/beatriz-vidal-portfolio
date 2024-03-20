@@ -73,7 +73,7 @@ export default function Contact() {
           </form>
         </div>
 
-        <div className="flex flex-col-reverse lg:w-1/3 lg:flex-col lg:gap-8">
+        <div className="flex flex-col-reverse gap-4 lg:w-1/3 lg:flex-col lg:gap-8">
           <img
             src={Illustration}
             alt=""

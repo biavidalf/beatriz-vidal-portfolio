@@ -1,14 +1,15 @@
 import { Alert } from "@material-tailwind/react";
 import { X, Download } from "lucide-react";
+import { getImageURL } from "../../utils/imageURL";
 
-export default function PdfViewer({ pdfPath, isActive, setIsActive }) {
+export default function PdfViewer({ pdfPath, isActive, setIsActive, style }) {
   return (
     isActive && (
       <>
-        <div className="absolute h-[600px] w-[80%]">
+        <div className={`absolute z-50 h-[600px] w-full sm:w-[80%] ${style}`}>
           <object
             className="absolute"
-            data={`src/assets/${pdfPath}`}
+            data={getImageURL(`${pdfPath}`)}
             width="100%"
             height="100%"
             title="BeatrizVidalResume"

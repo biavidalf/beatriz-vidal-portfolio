@@ -32,7 +32,10 @@ export function BlogCard({ certificate: { id, cover, link } }) {
         <Typography variant="h5" className="text-gray-200">
           {t(`certificatesList.${id}.title`)}
         </Typography>
-        <Typography variant="h6" className="font-medium text-deep-purple-200">
+        <Typography
+          variant="h6"
+          className="font-medium text-deep-purple-100 sm:text-deep-purple-200"
+        >
           {t(`certificatesList.${id}.company`)}
         </Typography>
         <Typography
@@ -51,11 +54,15 @@ export function BlogCard({ certificate: { id, cover, link } }) {
         </div>
       </CardBody>
       <CardFooter className="flex items-center">
-        <a target="_blank" href="#" className="inline-block">
+        <a
+          target="_blank"
+          href={t(`certificatesList.${id}.link`)}
+          className="inline-block"
+        >
           <Button
             size="sm"
             variant="text"
-            className="flex items-center gap-2 rounded text-gray-200 hover:bg-bg-purple-hover"
+            className="flex items-center gap-2 rounded text-gray-200 hover:bg-bg-purple-hover focus:bg-bg-purple-hover"
           >
             {t("certificates.details", {
               defaultValue: "certificates.details",

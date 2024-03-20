@@ -29,6 +29,7 @@ function Hero() {
   } = useTranslation();
 
   const [isActive, setIsActive] = useState(false);
+  const [style, setStyle] = useState("left-0 right-0 top-0");
 
   const handleChangeLanguage = () => {
     const newLanguage = language === "en" ? "pt" : "en";
@@ -124,7 +125,7 @@ function Hero() {
 
             <div className="mt-4 flex flex-col items-center gap-3 sm:flex-row sm:gap-5">
               <button className="rounded-md bg-gradient-to-r from-[#5d55ce] via-purple-main to-[#8e87ed] px-7 py-3 font-medium normal-case tracking-wide hover:bg-purple-main hover:bg-none md:text-[20px]">
-                {t("hero.buttonProjects")}
+                <a href="#projects">{t("hero.buttonProjects")}</a>
               </button>
               <button
                 onClick={() => {
@@ -212,6 +213,7 @@ function Hero() {
           isActive={isActive}
           setIsActive={setIsActive}
           pdfPath="resume/BeatrizVidalCurriculo.pdf"
+          style={style}
         />
       </header>
 

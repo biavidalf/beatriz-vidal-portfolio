@@ -10,14 +10,18 @@ import Logo from "../../../assets/logo.svg";
 import { Button, Tooltip } from "@material-tailwind/react";
 import { useTranslation } from "react-i18next";
 import { Paperclip } from "lucide-react";
+import PdfViewer from "../../PdfViewer";
+import { useState } from "react";
 
 export default function () {
   const { t } = useTranslation();
 
+  const [isActive, setIsActive] = useState(false);
+
   return (
     <footer
       id="footer"
-      className="h-fit border-t border-stroke py-6 sm:px-10 lg:h-32 lg:py-4"
+      className="relative h-fit border-t border-stroke py-6 sm:px-10 lg:h-32 lg:py-4"
     >
       <div className="mx-auto flex h-full max-w-7xl flex-col items-center gap-y-4 lg:flex-row lg:justify-between">
         <div className="flex h-full flex-col justify-around gap-y-5 text-gray-400 lg:gap-y-0">
@@ -55,6 +59,9 @@ export default function () {
             <Trailhead />
             <Tooltip content="open resume">
               <Paperclip
+                onClick={() => {
+                  setIsActive(true);
+                }}
                 className="text-gray-400 lg:hidden"
                 strokeWidth={1.5}
                 size={20}
@@ -63,6 +70,9 @@ export default function () {
           </div>
           <Button
             size="sm"
+            onClick={() => {
+              setIsActive(true);
+            }}
             className="hidden bg-bg-purple-hover font-medium normal-case lg:block lg:w-full"
           >
             {t("buttons.resume")}
@@ -70,6 +80,12 @@ export default function () {
           <span className="text-sm lg:hidden">{t("copyright")}</span>
         </div>
       </div>
+      <PdfViewer
+        isActive={isActive}
+        setIsActive={setIsActive}
+        pdfPath="resume/BeatrizVidalCurriculo.pdf"
+        style="left-0 right-0 mx-auto bottom-10"
+      />
     </footer>
   );
 }

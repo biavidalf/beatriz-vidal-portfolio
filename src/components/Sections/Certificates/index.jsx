@@ -58,7 +58,6 @@ export default function Certificates() {
             certificates
               .slice(currentPage * perPage, perPage * currentPage + perPage)
               .map((certificate, index) => {
-                console.log(certificate);
                 return (
                   <BlogCard certificate={certificate} key={certificate.id} />
                 );

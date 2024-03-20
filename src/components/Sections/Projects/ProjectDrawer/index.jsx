@@ -11,7 +11,11 @@ import IconArrowLeft from "src/assets/icons/arrow-left.svg";
 import IconArrowRight from "src/assets/icons/arrow-right.svg";
 import { useTranslation } from "react-i18next";
 
-export default function ProjectDrawer({ setOpenRight, openRight }) {
+export default function ProjectDrawer({
+  setOpenRight,
+  openRight,
+  projectsValues,
+}) {
   const { t } = useTranslation();
   const projects = t("projectsList", { returnObjects: true });
   const drawerRef = useRef();
@@ -25,7 +29,7 @@ export default function ProjectDrawer({ setOpenRight, openRight }) {
   };
 
   const goToNextProject = () => {
-    const nextProjectId = findNextProject(currentProject);
+    const nextProjectId = findNextProject(currentProject, projectsValues);
     setCurrentProject(nextProjectId);
     resetScrollPosition(drawerRef);
   };
@@ -57,21 +61,21 @@ export default function ProjectDrawer({ setOpenRight, openRight }) {
         </Typography>
 
         <div className="space-y-2">
-          <h7 className="text-sm font-semibold uppercase text-purple-main">
+          <h6 className="text-sm font-semibold uppercase text-purple-main">
             About the project
-          </h7>
+          </h6>
 
           <div className="space-y-2 text-justify text-lg">
             {description.map((text, index) => {
-              return <p>{text}</p>;
+              return <p key={index}>{text}</p>;
             })}
           </div>
         </div>
 
         <div className="space-y-2">
-          <h7 className="text-sm font-semibold uppercase text-purple-main">
+          <h6 className="text-sm font-semibold uppercase text-purple-main">
             Github Repository
-          </h7>
+          </h6>
 
           <div className="text-lg">
             <a
@@ -86,16 +90,19 @@ export default function ProjectDrawer({ setOpenRight, openRight }) {
         </div>
 
         <div className="space-y-2">
-          <h7 className="text-sm font-semibold uppercase text-purple-main">
+          <h6 className="text-sm font-semibold uppercase text-purple-main">
             Technologies used
-          </h7>
+          </h6>
 
           <div className="flex flex-wrap justify-between gap-2 lg:justify-start ">
             {stack.map((technology, index) => {
               return (
-                <div className="flex min-w-24 cursor-pointer flex-col items-center justify-center gap-y-2 rounded border border-stroke bg-bg-glass/60 p-4 text-sm transition duration-300 hover:scale-105">
+                <div
+                  key={index}
+                  className="flex min-w-24 cursor-pointer flex-col items-center justify-center gap-y-2 rounded border border-stroke bg-bg-glass/60 p-4 text-sm transition duration-300 hover:scale-105"
+                >
                   <img
-                    key={index}
+                    key={`${technology}-icon`}
                     src={`src/assets/icons/technologies/icon-${technology}.svg`}
                     alt={`${technology} icon`}
                     className="w-7"
