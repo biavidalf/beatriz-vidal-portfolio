@@ -46,20 +46,20 @@ function Hero() {
             <MenuHandler className="sm:hidden">
               <MenuIcons size={30} />
             </MenuHandler>
-            <MenuList className="border-deep-purple-400 bg-bg-purple-hover text-gray-200">
-              <MenuItem className="focus:bg-deep-purple-400 focus:text-gray-100">
+            <MenuList className="border-[#302548] bg-bg-purple-dark text-gray-200">
+              <MenuItem className="focus:bg-bg-purple-hover focus:text-gray-100">
                 <a href="#projects">{t("nav.projects")}</a>
               </MenuItem>
-              <MenuItem className="focus:bg-deep-purple-400 focus:text-gray-100">
+              <MenuItem className="focus:bg-bg-purple-hover focus:text-gray-100">
                 <a href="#about">{t("nav.about")}</a>
               </MenuItem>
-              <MenuItem className="focus:bg-deep-purple-400 focus:text-gray-100">
+              <MenuItem className="focus:bg-bg-purple-hover focus:text-gray-100">
                 <a href="#experience">{t("nav.experience")}</a>
               </MenuItem>
-              <MenuItem className="focus:bg-deep-purple-400 focus:text-gray-100">
+              <MenuItem className="focus:bg-bg-purple-hover focus:text-gray-100">
                 <a href="#certificates">{t("nav.certificates")}</a>
               </MenuItem>
-              <MenuItem className="focus:bg-deep-purple-400 focus:text-gray-100">
+              <MenuItem className="focus:bg-bg-purple-hover focus:text-gray-100">
                 <a href="#contact">{t("nav.contact")}</a>
               </MenuItem>
             </MenuList>
@@ -219,7 +219,7 @@ function Hero() {
         <img
           src="/bg-hero.svg"
           alt=""
-          className="circle w-42 blur-2xl lg:w-[600px]"
+          className={`${window.innerWidth >= 760 ? "circle" : "circle-mobile"} w-42 blur-2xl lg:w-[600px]`}
         />
       </div>
     </>

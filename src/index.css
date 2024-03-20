@@ -9,6 +9,7 @@ html{
 body {
   @apply bg-bg-main text-gray-100;
   font-family: "Montserrat", sans-serif;
+  scroll-margin: 100px;
 }
 
 @layer utilities {
@@ -22,13 +23,31 @@ body {
     transform: translate(0, 30%) rotate(0deg);
   }
   25% {
+    transform: translate(80%, 0) rotate(90deg);
+  }
+  50% {
+    transform: translate(150%, 20%) rotate(180deg);
+  }
+  75% {
+    transform: translate(80%, 50%) rotate(270deg);
+  }
+  100% {
+    transform: translate(0, 30%) rotate(360deg);
+  }
+}
+
+@keyframes circular-motion-mobile{
+  0% {
+    transform: translate(0, 30%) rotate(0deg);
+  }
+  25% {
     transform: translate(30%, 0) rotate(90deg);
   }
   50% {
-    transform: translate(100%, 20%) rotate(180deg);
+    transform: translate(80%, 20%) rotate(180deg);
   }
   75% {
-    transform: translate(30%, 40%) rotate(270deg);
+    transform: translate(30%, 50%) rotate(270deg);
   }
   100% {
     transform: translate(0, 30%) rotate(360deg);
@@ -36,5 +55,8 @@ body {
 }
 
 .circle {
-  animation: circular-motion 10s infinite linear;
+  animation: circular-motion 15s infinite linear;
+}
+.circle-mobile {
+  animation: circular-motion-mobile 15s infinite linear;
 }

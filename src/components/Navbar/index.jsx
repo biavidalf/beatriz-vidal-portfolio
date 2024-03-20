@@ -56,8 +56,7 @@ export default function Navbar() {
                 key={index}
               >
                 <a
-                  target="_blank"
-                  href={`#`}
+                  href={`#${item}`}
                   className="flex items-center transition-colors hover:text-purple-main"
                 >
                   {t(item)}

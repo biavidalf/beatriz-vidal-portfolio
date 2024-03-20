@@ -20,7 +20,7 @@ export default function Certificates() {
   return (
     <section
       id="certificates"
-      className="h-fit w-full !max-w-none bg-bg-mesh bg-no-repeat"
+      className="h-fit w-full !max-w-none bg-bg-mesh bg-center bg-no-repeat"
     >
       <div className="mx-auto flex max-w-5xl flex-col gap-y-5 py-20">
         <SectionTitle content={t("certificates.title")} />
