@@ -27,7 +27,7 @@
       "title": "Bring Back Coffee",
       "fullTitle": "Bring Back Coffee Shop",
       "description": [
-        "E-commerce for a Vintage Cafeteria, you can log in and put the items of your choice in your cart!",
+        "E-commerce para uma Cafeteria Vintage. Você pode entrar na sua conta e colocar seus itens de desejo no carrinho!",
         "Projeto do meu último ano no ensino médio integrado com técnico em informática, em 2021. Duas semanas intensas de aprendizado, nas quais lidei com novos erros, estudei diferentes documentações, procurei referências/erros, implementei sessões de navegador, aprendi a usar bibliotecas externas e aprofundei meus conhecimentos acerca do ecossistema python/flask e arquitetura MVC.",
         "Desenvolvimento feito em Python com o framework Flask e o banco de dados SQLite, e estilização em Bootstrap."
       ],

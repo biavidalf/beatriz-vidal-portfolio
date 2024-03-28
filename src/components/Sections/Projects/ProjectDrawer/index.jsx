@@ -82,10 +82,10 @@ export default function ProjectDrawer({
             <a
               target="_blank"
               href={github}
-              className="flex flex-row-reverse items-center justify-end gap-2"
+              className="flex items-center justify-end gap-2 break-all"
             >
-              {github}
               <Link size={22} />
+              {github}
             </a>
           </div>
         </div>

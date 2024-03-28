@@ -35,13 +35,19 @@ export default function () {
                 <a href="#about">{t("nav.about")}</a>
               </li>
               <li className="cursor-pointer transition-colors hover:text-gray-50">
-                <a href="#certificates">{t("nav.experience")}</a>
+                <a href="#experience">{t("nav.experience")}</a>
               </li>
               <li className="cursor-pointer transition-colors hover:text-gray-50">
                 <a href="#certificates">{t("nav.certificates")}</a>
               </li>
               <li className="cursor-pointer transition-colors hover:text-gray-50">
-                <a href="#experience">{t("nav.resume")}</a>
+                <button
+                  onClick={() => {
+                    setIsActive(true);
+                  }}
+                >
+                  {t("nav.resume")}
+                </button>
               </li>
             </ul>
           </div>

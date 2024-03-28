@@ -66,7 +66,7 @@ export function Linkedin({ size = 20 }) {
     <LinkEstructure
       icon={<LinkedinIcon size={size} strokeWidth={1.5} />}
       tooltipText="in/beatriz-vidal-bf4"
-      link="www.linkedin.com/in/beatriz-vidal-bf4"
+      link="https://www.linkedin.com/in/beatriz-vidal-bf4"
     />
   );
 }
