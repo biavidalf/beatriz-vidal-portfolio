@@ -3,7 +3,7 @@
     "phais-plus": {
       "id": "phais-plus",
       "title": "Phais+",
-      "fullTitle": "PHAIS+ hi Pharmaceutical System",
+      "fullTitle": "PHAIS+ Pharmaceutical System",
       "description": [
         "Pharmaceutical system that manages the exchange of medications between hospitals through requests/tickets.",
         "Its goal is to help hospitals reduce the waste of medications, as they are often discarded due to expiration and other factors.", 
@@ -53,7 +53,7 @@
         "The front-end development was executed using React.js. The styling was accomplished with the TailwindCSS framework, supplemented by components from HyperUI and MambaUI. The deployment plataform utilized was Vercel."
       ],
       "stack": ["react", "tailwind"],
-      "github": "https://github.com/biavidalf/BringBackCoffeeShop",
+      "github": "https://github.com/biavidalf/jpd",
       "deploy": "https://jpd.vercel.app",
       "images": [
         "hero.png",
@@ -95,7 +95,7 @@
         "Prototyping was done using Figma, and development was carried out in React.js."
       ],
       "stack": ["react", "tailwind", "figma"],
-      "github": "https://github.com/biavidalf/elder-care",
+      "github": "https://github.com/programando-com-edu/DESAFIO-DO-FUTURO",
       "images": ["desafioFuturo.png"],
       "coverUrl": "desafioFuturo.png",
       "type": "mobile"

@@ -3,7 +3,7 @@
     "phais-plus": {
       "id": "phais-plus",
       "title": "Phais+",
-      "fullTitle": "PHAIS+ hi Pharmaceutical System",
+      "fullTitle": "PHAIS+ Sistema Farmacêutico",
       "description": [
         "Sistema farmacêutico que gerencia a troca de medicamentos entre hospitais por meio de solicitações/tickets.",
         "Seu objetivo é ajudar os hospitais a reduzir o desperdício de medicamentos, que muitas vezes são descartados devido ao vencimento e outros fatores.",
@@ -53,7 +53,7 @@
             "Desenvolvimento Front-end realizado com React.js. Estilização utilizando o framework TailwindCSS juntamente com componentes do HyperUI e MambaUI. Deploy através do Vercel."
         ],
         "stack": ["react", "tailwind"],
-        "github": "https://github.com/biavidalf/BringBackCoffeeShop",
+        "github": "https://github.com/biavidalf/jpd",
         "deploy": "https://jpd.vercel.app",
         "images": ["hero.png", "about.png", "operation.png", "acting.png", "plans.png", "plans2.png", "team.png", "contact.png"],
         "coverUrl": "hero.png",
@@ -86,7 +86,7 @@
             "Prototipação feita pelo figma e desenvolvimento em React.js."
         ],
         "stack": ["react", "tailwind", "figma"],
-        "github": "https://github.com/biavidalf/elder-care",
+        "github": "https://github.com/programando-com-edu/DESAFIO-DO-FUTURO",
         "images": ["desafioFuturo.png"],
         "coverUrl": "desafioFuturo.png",
         "type": "mobile"
@@ -94,7 +94,7 @@
     "adapterPlan": {
       "id": "adapterPlan",
       "title": "Adapter Plan",
-      "fullTitle": "Adapter Plan - Weekly Planner",
+      "fullTitle": "Adapter Plan - Planner Semanal",
       "description": [
         "Planner semanal com interface simples e intuitiva, com cores pasteis e ausência de horas para transmitir tranquilidade.",
         "Sistema de login e CRUD de tarefas.",
