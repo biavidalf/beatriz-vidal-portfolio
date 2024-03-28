@@ -1,4 +1,10 @@
 {
+  "toast": {
+    "email": {
+      "success": "E-mail enviado com sucesso!",
+      "error": "Algo de errado aconteceu. Tente novamente."
+    }
+  },
   "nav": {
     "projects": "Projetos",
     "about": "Sobre mim",

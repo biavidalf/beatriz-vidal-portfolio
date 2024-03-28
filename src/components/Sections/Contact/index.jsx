@@ -1,11 +1,44 @@
 import { SectionTitle } from "../../Text";
-import { Typography, Textarea, Input, Button } from "@material-tailwind/react";
+import { Typography, Button } from "@material-tailwind/react";
 import { Send, Phone, Mail, Linkedin } from "lucide-react";
 import Illustration from "../../../assets/contact-illustration.svg";
 import { useTranslation } from "react-i18next";
+import { useEffect, useRef } from "react";
+import toast, { Toaster } from "react-hot-toast";
+import emailjs from "@emailjs/browser";
+
+const notifySuccess = (message) => toast.success(message);
+const notifyError = (message) => toast.error(message);
 
 export default function Contact() {
   const { t } = useTranslation();
+  const form = useRef();
+  const from_name = useRef();
+  const from_email = useRef();
+  const message = useRef();
+
+  useEffect(() => emailjs.init("9Ip5T_f1otDQhTzf8"), []);
+
+  function sendEmail(e) {
+    e.preventDefault(); // prevents the page from reloading when you hit “Send”
+
+    emailjs
+      .sendForm("service_hflhe6t", "template_ouqyh1o", form.current, {
+        publicKey: "9Ip5T_f1otDQhTzf8",
+        from_name: from_name.current.value,
+        from_email: from_email.current.value,
+        message: message.current.value,
+      })
+      .then(
+        (result) => {
+          notifySuccess(t("toast.email.success"));
+        },
+        (error) => {
+          notifyError(t("toast.email.error"));
+        },
+      );
+  }
+
   return (
     <section id="contact" className="bg-bg-mesh bg-[bottom_0.5rem]">
       <div className="flex !max-w-4xl flex-col gap-10 rounded-lg border border-stroke bg-bg-glass/50 px-6 py-10 lg:flex-row lg:items-center lg:gap-16 lg:p-12">
@@ -20,14 +53,16 @@ export default function Contact() {
             </Typography>
           </div>
 
-          <form className="flex flex-col gap-3">
+          <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-3">
             <label
-              htmlFor="userName"
+              htmlFor="from_name"
               className="relative block overflow-hidden rounded border border-transparent bg-[#27243C]/60 px-3 pt-3 shadow-sm  focus-within:ring-1 focus-within:ring-purple-main"
             >
               <input
                 type="text"
-                id="userName"
+                id="from_name"
+                name="from_name"
+                ref={from_name}
                 placeholder={t("contact.inputs.name")}
                 className="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
               />
@@ -38,12 +73,14 @@ export default function Contact() {
             </label>
 
             <label
-              htmlFor="userEmail"
+              htmlFor="from_email"
               className="relative block overflow-hidden rounded border border-transparent bg-[#27243C]/60 px-3 pt-3 shadow-sm  focus-within:ring-1 focus-within:ring-purple-main"
             >
               <input
                 type="email"
-                id="userEmail"
+                id="from_email"
+                name="from_email"
+                ref={from_email}
                 placeholder={t("contact.inputs.email")}
                 className="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
               />
@@ -54,7 +91,9 @@ export default function Contact() {
             </label>
 
             <textarea
-              id="userMessage"
+              id="message"
+              name="message"
+              ref={message}
               className="form-textarea w-full resize-none rounded border-none bg-[#27243C]/60 align-top shadow-sm placeholder:text-gray-400 focus:ring-purple-main sm:text-sm"
               rows="4"
               placeholder={t("contact.inputs.message")}
@@ -66,6 +105,7 @@ export default function Contact() {
               color="indigo"
               variant="gradient"
               className="mt-2 flex items-center justify-center gap-3 rounded"
+              type="submit"
             >
               <Send size={20} />
               {t("contact.inputs.button")}
@@ -101,6 +141,23 @@ export default function Contact() {
           </ul>
         </div>
       </div>
+
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        gutter={8}
+        containerClassName=""
+        containerStyle={{}}
+        toastOptions={{
+          // Define default options
+          className: "",
+          duration: 5000,
+          style: {
+            background: "#6C63FF",
+            color: "#F5F5F5",
+          },
+        }}
+      />
     </section>
   );
 }
