@@ -114,7 +114,7 @@ export default function Navbar() {
       className="sticky top-0 z-50 border-none bg-[#27243C]/60"
     >
       <div className="relative m-auto flex w-full items-center justify-between text-blue-gray-900 *:text-gray-100 lg:max-w-7xl">
-        <a target="_blank" href="#">
+        <a href="#">
           <img src={Logo} alt="" />
         </a>
         <div className="hidden lg:block">

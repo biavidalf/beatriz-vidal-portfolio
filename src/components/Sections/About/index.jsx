@@ -1,9 +1,13 @@
-import { Code2, Play, MessageSquareMore } from "lucide-react";
-import { TextHighlight, SectionTitle } from "../../Text";
 import { useTranslation, Trans } from "react-i18next";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+import { TextHighlight, SectionTitle } from "../../Text";
 import AboutSection from "./AboutSection";
 import AboutSectionItem from "./AboutSection/AboutSectionItem";
+
 import { getImageURL } from "../../../utils/imageURL";
+import { useEffect } from "react";
 
 export default function About() {
   const { t } = useTranslation("", { keyPrefix: "about" });
@@ -14,15 +18,36 @@ export default function About() {
   const professionalExperiences = t("experience", { returnObjects: true });
   const education = t("education", { returnObjects: true });
 
+  // Animation
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
+
   return (
     <div className="relative w-full !max-w-none !px-0">
       <section id="about" className="mx-auto flex flex-col pt-24">
-        <SectionTitle
-          content={t("title")}
-          className="mx-auto -mb-24 w-full px-7 lg:max-w-5xl"
-        />
+        <motion.div
+          ref={ref}
+          variants={animationTitle}
+          initial="hidden"
+          animate={control}
+        >
+          <SectionTitle
+            content={t("title")}
+            className="mx-auto -mb-24 w-full px-7 lg:max-w-5xl"
+          />
+        </motion.div>
         <div className="bg-mesh-elipse bg-right-bottom bg-no-repeat">
           <AboutSection
+            ref={ref}
+            variants={animationContent}
+            animate={control}
+            motion={motion}
             className="mx-auto px-7 pt-32 lg:max-w-5xl"
             title={t("intro.title")}
           >
@@ -93,32 +118,81 @@ export default function About() {
         </div>
 
         <div className="mt-10 space-y-32 bg-mesh-elipse bg-left-bottom bg-no-repeat">
-          <AboutSection
-            id="experience"
-            title={professionalExperiences["title"]}
-            className="mx-auto px-7 pt-32 lg:w-full lg:max-w-5xl"
-          >
-            <div className="flex flex-col gap-y-11 lg:gap-y-20">
-              <AboutSectionItem
-                data={professionalExperiences["unimed"]}
-                active={true}
-              />
-              <AboutSectionItem data={professionalExperiences["portfolio"]} />
-            </div>
-          </AboutSection>
+          <Experience professionalExperiences={professionalExperiences} />
 
-          <AboutSection
-            id="education"
-            title={education["title"]}
-            className="mx-auto px-7 pt-32 lg:w-full lg:max-w-5xl"
-          >
-            <div className="flex flex-col gap-y-11 lg:gap-y-20">
-              <AboutSectionItem data={education["unifor"]} active={true} />
-              <AboutSectionItem data={education["ifce"]} />
-            </div>
-          </AboutSection>
+          <Education education={education} />
         </div>
       </section>
     </div>
   );
 }
+
+// Motion Animations
+const animationTitle = {
+  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  hidden: { opacity: 0, y: 200 },
+};
+const animationContent = {
+  visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.5 } },
+  hidden: { opacity: 0, y: 200 },
+};
+
+// Motion Components
+const Experience = ({ professionalExperiences }) => {
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
+
+  return (
+    <AboutSection
+      ref={ref}
+      variants={animationContent}
+      animate={control}
+      motion={motion}
+      id="experience"
+      title={professionalExperiences["title"]}
+      className="mx-auto px-7 pt-32 lg:w-full lg:max-w-5xl"
+    >
+      <div className="flex flex-col gap-y-11 lg:gap-y-20">
+        <AboutSectionItem
+          data={professionalExperiences["unimed"]}
+          active={true}
+        />
+        <AboutSectionItem data={professionalExperiences["portfolio"]} />
+      </div>
+    </AboutSection>
+  );
+};
+
+const Education = ({ education }) => {
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
+
+  return (
+    <AboutSection
+      ref={ref}
+      variants={animationContent}
+      animate={control}
+      motion={motion}
+      id="education"
+      title={education["title"]}
+      className="mx-auto px-7 pt-32 lg:w-full lg:max-w-5xl"
+    >
+      <div className="flex flex-col gap-y-11 lg:gap-y-20">
+        <AboutSectionItem data={education["unifor"]} active={true} />
+        <AboutSectionItem data={education["ifce"]} />
+      </div>
+    </AboutSection>
+  );
+};
