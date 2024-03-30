@@ -1,4 +1,3 @@
-import { Alert } from "@material-tailwind/react";
 import { X, Download } from "lucide-react";
 import { getImageURL } from "../../utils/imageURL";
 
@@ -40,25 +39,4 @@ export default function PdfViewer({ pdfPath, isActive, setIsActive, style }) {
       </>
     )
   );
-}
-
-{
-  /*
-  
-  
-  <object
-        data="src/assets/resume/resume.pdf"
-        type="application/pdf"
-        width="80%"
-        height="600px"
-        className="absolute"
-      >
-        <Alert
-          onClose={() => setIsActive(false)}
-          className="rounded border border-stroke bg-bg-glass/85"
-        >
-          It appears you don't have a PDF plugin for this browser. No biggie...
-          you can <a href="resume.pdf">click here to download the PDF file.</a>
-        </Alert>
-      </object> */
 }
