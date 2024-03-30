@@ -1,11 +1,15 @@
-import { SectionTitle } from "../../Text";
-import { Typography, Button } from "@material-tailwind/react";
-import { Send, Phone, Mail, Linkedin } from "lucide-react";
-import Illustration from "../../../assets/contact-illustration.svg";
-import { useTranslation } from "react-i18next";
 import { useEffect, useRef } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import { Typography, Button } from "@material-tailwind/react";
 import emailjs from "@emailjs/browser";
+import { useTranslation } from "react-i18next";
+import toast, { Toaster } from "react-hot-toast";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Send, Phone, Mail, Linkedin } from "lucide-react";
+
+import { SectionTitle } from "../../Text";
+
+import Illustration from "../../../assets/contact-illustration.svg";
 
 const notifySuccess = (message) => toast.success(message);
 const notifyError = (message) => toast.error(message);
@@ -39,8 +43,25 @@ export default function Contact() {
       );
   }
 
+  // Animation
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
+
   return (
-    <section id="contact" className="bg-bg-mesh bg-[bottom_0.5rem]">
+    <motion.section
+      ref={ref}
+      variants={animationContent}
+      initial="hidden"
+      animate={control}
+      id="contact"
+      className="bg-bg-mesh bg-[bottom_0.5rem]"
+    >
       <div className="flex !max-w-4xl flex-col gap-10 rounded-lg border border-stroke bg-bg-glass/50 px-6 py-10 lg:flex-row lg:items-center lg:gap-16 lg:p-12">
         <div className="space-y-4 lg:w-2/3">
           <div>
@@ -158,6 +179,12 @@ export default function Contact() {
           },
         }}
       />
-    </section>
+    </motion.section>
   );
 }
+
+// Motion Animations
+const animationContent = {
+  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  hidden: { opacity: 0, y: 200 },
+};

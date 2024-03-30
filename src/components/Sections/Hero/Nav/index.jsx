@@ -20,7 +20,7 @@ function DesktopNav() {
   const { t } = useTranslation();
 
   return (
-    <nav className="hidden font-semibold uppercase text-gray-500 sm:items-center sm:gap-8 sm:text-sm md:flex">
+    <nav className="hidden w-full font-semibold uppercase text-gray-500 sm:items-center sm:gap-8 sm:text-sm md:flex">
       <a href="#projects" className="transition-colors hover:text-purple-main">
         {t("nav.projects")}
       </a>

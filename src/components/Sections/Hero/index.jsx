@@ -69,21 +69,21 @@ function Hero() {
 
 /* Motion Animations */
 const animationMainText = {
-  visible: { opacity: 1, x: 0, transition: { duration: 1 } },
-  hidden: { opacity: 0, x: -1200 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.5 } },
+  hidden: { opacity: 0, y: 200 },
 };
 
 const animationMainIllustration = {
-  visible: { opacity: 1, x: 0, transition: { duration: 1, delay: 1 } },
-  hidden: { opacity: 0, x: 700 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 1 } },
+  hidden: { opacity: 0, y: 200 },
 };
 const animationNav = {
-  visible: { opacity: 1, transition: { duration: 0.5, delay: 2 } },
+  visible: { opacity: 1, transition: { duration: 0.5, delay: 1.8 } },
   hidden: { opacity: 0 },
 };
 
 const animationIcons = {
-  visible: { opacity: 1, transition: { duration: 0.5, delay: 2 } },
+  visible: { opacity: 1, transition: { duration: 0.5, delay: 1.8 } },
   hidden: { opacity: 0 },
 };
 
@@ -150,19 +150,24 @@ const MainSectionText = ({ t }) => {
 
 const MainSectionIllustration = () => {
   return (
-    <motion.div
+    <motion.img
       variants={animationMainIllustration}
       initial="hidden"
       animate="visible"
-    >
-      <img src={HeroIllustration} className="w-2/3 md:w-auto md:flex-1" />
-    </motion.div>
+      src={HeroIllustration}
+      className="w-2/3 md:w-auto md:flex-1"
+    />
   );
 };
 
 const NavAnimated = () => {
   return (
-    <motion.div variants={animationNav} initial="hidden" animate="visible">
+    <motion.div
+      variants={animationNav}
+      initial="hidden"
+      animate="visible"
+      className="w-full sm:w-auto"
+    >
       <Nav />
     </motion.div>
   );

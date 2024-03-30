@@ -1,4 +1,7 @@
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Trans, useTranslation } from "react-i18next";
 
 import { SectionTitle, TextHighlight } from "../../Text";
 import ProjectsFilter from "./ProjectsFilter";
@@ -7,7 +10,6 @@ import Project from "./Project";
 import ProjectDrawer from "./ProjectDrawer";
 
 import { useCurrentProject } from "src/contexts/currentProject";
-import { Trans, useTranslation } from "react-i18next";
 
 export default function Projects() {
   const { t } = useTranslation();
@@ -34,10 +36,28 @@ export default function Projects() {
   const totalPages = Math.ceil(filteredProjects.length / perPage);
   const [currentPage, setCurrentPage] = useState(0);
 
+  // Animation
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
+
   return (
     <section id="projects" className="flex flex-col gap-8 pt-24">
-      <div id="filter" className="space-y-3">
+      <motion.div
+        ref={ref}
+        variants={animationTitle}
+        initial="hidden"
+        animate={control}
+        id="filter"
+        className="space-y-3"
+      >
         <SectionTitle content={t("projects.title")} className="mb-1" />
+
         <p className="text-justify text-lg text-gray-100/75 lg:text-xl">
           <Trans i18nKey="projects.description">
             Over the past few years, I’ve primarily focused on a
@@ -52,9 +72,15 @@ export default function Projects() {
             as possible. Take a look at what I’ve been up to!
           </Trans>
         </p>
-      </div>
+      </motion.div>
 
-      <div className="flex flex-col items-center gap-5">
+      <motion.div
+        ref={ref}
+        variants={animationProjects}
+        initial="hidden"
+        animate={control}
+        className="flex flex-col items-center gap-5"
+      >
         <ProjectsFilter
           currentFilter={currentFilter}
           setCurrentFilter={setCurrentFilter}
@@ -80,7 +106,7 @@ export default function Projects() {
           setCurrentPage={setCurrentPage}
           total={totalPages}
         />
-      </div>
+      </motion.div>
 
       {currentProject != null && (
         <ProjectDrawer
@@ -92,3 +118,14 @@ export default function Projects() {
     </section>
   );
 }
+
+// Motion Animations
+const animationTitle = {
+  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  hidden: { opacity: 0, y: 200 },
+};
+
+const animationProjects = {
+  visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.5 } },
+  hidden: { opacity: 0, y: 200 },
+};
