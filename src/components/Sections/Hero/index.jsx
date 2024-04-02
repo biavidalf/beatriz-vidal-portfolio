@@ -70,12 +70,12 @@ function Hero() {
 /* Motion Animations */
 const animationMainText = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.5 } },
-  hidden: { opacity: 0, y: 200 },
+  hidden: { opacity: 0, y: 100 },
 };
 
 const animationMainIllustration = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 1 } },
-  hidden: { opacity: 0, y: 200 },
+  hidden: { opacity: 0, y: 100 },
 };
 const animationNav = {
   visible: { opacity: 1, transition: { duration: 0.5, delay: 1.8 } },

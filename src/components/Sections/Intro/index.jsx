@@ -30,7 +30,7 @@ const animationMainContent = {
   hidden: { opacity: 0, y: 200 },
 };
 const animationSlideContent = {
-  visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.5 } },
+  visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.1 } },
   hidden: { opacity: 0, y: 200 },
 };
 

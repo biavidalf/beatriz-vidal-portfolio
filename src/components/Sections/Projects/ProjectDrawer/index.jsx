@@ -82,7 +82,7 @@ export default function ProjectDrawer({
             <a
               target="_blank"
               href={github}
-              className="flex items-center justify-end gap-2 break-all"
+              className="flex items-center gap-2 break-all"
             >
               <Link size={22} />
               {github}
@@ -95,7 +95,7 @@ export default function ProjectDrawer({
             Technologies used
           </h6>
 
-          <div className="flex flex-wrap justify-between gap-2 lg:justify-start ">
+          <div className="flex flex-wrap gap-2 ">
             {stack.map((technology, index) => {
               return (
                 <div
