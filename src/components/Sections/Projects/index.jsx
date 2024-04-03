@@ -121,11 +121,11 @@ export default function Projects() {
 
 // Motion Animations
 const animationTitle = {
-  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-  hidden: { opacity: 0, y: 200 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  hidden: { opacity: 0, y: 100 },
 };
 
 const animationProjects = {
-  visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.5 } },
-  hidden: { opacity: 0, y: 200 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.3 } },
+  hidden: { opacity: 0, y: 100 },
 };

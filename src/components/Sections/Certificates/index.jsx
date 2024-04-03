@@ -118,11 +118,11 @@ export default function Certificates() {
 
 // Motion Animations
 const animationTitle = {
-  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-  hidden: { opacity: 0, y: 200 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  hidden: { opacity: 0, y: 100 },
 };
 
 const animationContent = {
-  visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.5 } },
-  hidden: { opacity: 0, y: 200 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.3 } },
+  hidden: { opacity: 0, y: 100 },
 };

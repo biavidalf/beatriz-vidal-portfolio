@@ -27,11 +27,11 @@ export default function Intro() {
 /* Motion Animations */
 const animationMainContent = {
   visible: { opacity: 1, y: 0, transition: { duration: 2 } },
-  hidden: { opacity: 0, y: 200 },
+  hidden: { opacity: 0, y: 100 },
 };
 const animationSlideContent = {
   visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.1 } },
-  hidden: { opacity: 0, y: 200 },
+  hidden: { opacity: 0, y: 100 },
 };
 
 /* Motion Components */
