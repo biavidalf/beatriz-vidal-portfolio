@@ -21,7 +21,11 @@ function DesktopNav() {
 
   return (
     <nav className="hidden w-full font-semibold uppercase text-gray-500 sm:items-center sm:gap-8 sm:text-sm md:flex">
-      <a href="#projects" className="transition-colors hover:text-purple-main">
+      <a
+        href="#projects"
+        className="transition-colors hover:text-purple-main"
+        tabIndex="0"
+      >
         {t("nav.projects")}
       </a>
       <a href="#about" className="transition-colors hover:text-purple-main">

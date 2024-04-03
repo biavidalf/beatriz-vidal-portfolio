@@ -115,7 +115,7 @@ export default function Navbar() {
     >
       <div className="relative m-auto flex w-full items-center justify-between text-blue-gray-900 *:text-gray-100 lg:max-w-7xl">
         <a href="#">
-          <img src={Logo} alt="" />
+          <img src={Logo} alt="Beatriz Vid Logo" />
         </a>
         <div className="hidden lg:block">
           <NavList />

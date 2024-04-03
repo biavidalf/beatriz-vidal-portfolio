@@ -27,7 +27,7 @@ export default function () {
         <div className="flex h-full flex-col justify-around gap-y-5 text-gray-400 lg:gap-y-0">
           <div className="flex items-center justify-center gap-8">
             <a href="#">
-              <img src={Logo} alt="" className="w-52" />
+              <img src={Logo} alt="Beatriz Vidal Logo" className="w-52" />
             </a>
 
             <ul className="hidden items-center gap-4 text-sm font-medium lg:flex">

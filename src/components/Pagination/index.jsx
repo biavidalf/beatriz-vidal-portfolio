@@ -41,12 +41,12 @@ export default function Pagination({
       <Typography color="gray" className="font-normal text-gray-300">
         {t("pagination.page")}{" "}
         <strong className="text-purple-main">{active + 1}</strong>{" "}
-        {t("pagination.of")} {total}
+        {t("pagination.of")} {total === 0 ? 1 : total}
       </Typography>
       <IconButton
         size="sm"
         onClick={next}
-        disabled={active === { total }}
+        disabled={active === total - 1}
         className="bg-bg-purple-dark text-gray-300 focus:bg-bg-purple-hover focus:ring-purple-main"
       >
         <ChevronRight className="h-4 w-4" />

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { Globe } from "lucide-react";
 import { Chip } from "@material-tailwind/react";
 import { useTranslation, Trans } from "react-i18next";
@@ -31,50 +31,52 @@ function Hero() {
     const newLanguage = language === "en" ? "pt" : "en";
     changeLanguage(newLanguage);
   };
+
   return (
     <>
-      <header
-        id="hero"
-        className="4xl:max-w-6xl relative z-10 m-auto flex min-h-screen flex-col items-center gap-16 overflow-x-hidden px-7 py-6 md:w-full md:max-w-5xl md:justify-evenly"
-      >
-        <NavAnimated />
+      <Suspense fallback={<HeroBackground />}>
+        <header
+          id="hero"
+          className="4xl:max-w-6xl relative z-10 m-auto flex min-h-screen flex-col items-center gap-16 overflow-x-hidden px-7 py-6 md:w-full md:max-w-5xl md:justify-evenly"
+        >
+          <NavAnimated />
 
-        <main className="flex flex-col items-center justify-center gap-12 lg:w-full lg:flex-row-reverse lg:flex-wrap lg:justify-center ">
-          <MainSectionIllustration />
-          <MainSectionText t={t} />
+          <main className="flex flex-col items-center justify-center gap-12 lg:w-full lg:flex-row-reverse lg:flex-wrap lg:justify-center ">
+            <MainSectionIllustration />
+            <MainSectionText t={t} />
 
-          <IconsMobile
+            <IconsMobile
+              handleChangeLanguage={handleChangeLanguage}
+              language={language}
+            />
+          </main>
+
+          <Icons
             handleChangeLanguage={handleChangeLanguage}
             language={language}
           />
-        </main>
 
-        <Icons
-          handleChangeLanguage={handleChangeLanguage}
-          language={language}
-        />
-
-        <PdfViewer
-          isActive={isActive}
-          setIsActive={setIsActive}
-          pdfPath="resume/BeatrizVidalCurriculo.pdf"
-          style={style}
-        />
-      </header>
-
-      <HeroBackground />
+          <PdfViewer
+            isActive={isActive}
+            setIsActive={setIsActive}
+            pdfPath="resume/BeatrizVidalCurriculo.pdf"
+            style={style}
+          />
+        </header>
+        <HeroBackground />
+      </Suspense>
     </>
   );
 }
 
 /* Motion Animations */
 const animationMainText = {
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.5 } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 1.3 } },
   hidden: { opacity: 0, y: 100 },
 };
 
 const animationMainIllustration = {
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 1 } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 1.6 } },
   hidden: { opacity: 0, y: 100 },
 };
 const animationNav = {

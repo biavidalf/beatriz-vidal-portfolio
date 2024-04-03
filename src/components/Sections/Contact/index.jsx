@@ -137,7 +137,7 @@ export default function Contact() {
         <div className="flex flex-col-reverse gap-4 lg:w-1/3 lg:flex-col lg:gap-8">
           <img
             src={Illustration}
-            alt=""
+            alt="Contact Illustration"
             className="max-w-64 scale-x-[-1] self-center lg:self-start"
           />
           <ul className="flex flex-col gap-4 text-gray-200 *:flex *:items-center *:gap-4">
