@@ -86,7 +86,7 @@ export default function Projects() {
           setCurrentFilter={setCurrentFilter}
         />
 
-        <div className="flex w-full flex-col items-center gap-y-5 *:flex-1 lg:flex-row lg:flex-wrap lg:justify-between *:lg:w-[49%] *:lg:flex-none">
+        <div className="flex w-full flex-col items-center gap-y-5 *:flex-1 lg:flex-row lg:flex-wrap lg:justify-between *:lg:h-[238px] *:lg:w-[49%] *:lg:flex-none">
           {filteredProjects
             .slice(currentPage * perPage, perPage * currentPage + 4)
             .map((project, index) => {

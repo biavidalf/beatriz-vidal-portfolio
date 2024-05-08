@@ -22,6 +22,21 @@
       "coverUrl": "cadastro.png",
       "type": "web"
     },
+    "brainwaves": {
+      "id": "brainwaves",
+      "title": "Brainwaves",
+      "fullTitle": "Brainwaves - Notas",
+      "description": [
+        "Aplicação de notas moderno e intuitivo com pastas e sistema de favoritos.",
+        "Realizado em colaboração com Fernanda Araújo.",
+        "Prototipação feita pelo figma."
+      ],
+      "stack": ["figma"],
+      "github": "https://dribbble.com/shots/23993819-Brainwaves-Notes",
+      "images": ["home.png", "section.png", "note.png",  "add-note.png"],
+      "coverUrl": "cover.png",
+      "type": "design"
+    },
     "bbcs": {
       "id": "bbcs",
       "title": "Bring Back Coffee",

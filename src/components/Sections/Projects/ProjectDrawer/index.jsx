@@ -75,7 +75,7 @@ export default function ProjectDrawer({
 
         <div className="space-y-2">
           <h6 className="text-sm font-semibold uppercase text-purple-main">
-            Github Repository
+            Take a look
           </h6>
 
           <div className="text-lg">
