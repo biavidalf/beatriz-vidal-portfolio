@@ -5,7 +5,7 @@ export default function PdfViewer({ pdfPath, isActive, setIsActive, style }) {
   return (
     isActive && (
       <>
-        <div className={`absolute z-50 h-[600px] w-full sm:w-[80%] ${style}`}>
+        <div className={`absolute z-50 h-[600px] w-full sm:w-[80%] sm:mx-auto ${style}`}>
           <object
             className="absolute"
             data={getImageURL(`${pdfPath}`)}
@@ -20,7 +20,7 @@ export default function PdfViewer({ pdfPath, isActive, setIsActive, style }) {
               height="100%"
             />
           </object>
-          <div className="absolute left-2 top-2 space-y-2 lg:top-16">
+          <div className="absolute right-7 top-2 space-y-2 lg:top-16">
             <button
               onClick={() => setIsActive(false)}
               className="rounded bg-black/70 p-1 text-gray-300 transition-colors hover:bg-black/50"

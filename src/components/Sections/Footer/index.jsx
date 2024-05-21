@@ -92,7 +92,7 @@ export default function () {
       <PdfViewer
         isActive={isActive}
         setIsActive={setIsActive}
-        pdfPath="resume/BeatrizVidalCurriculo.pdf"
+        pdfPath="resume/BeatrizVidal_Curriculo.pdf"
         style="left-0 right-0 mx-auto bottom-10"
       />
     </footer>

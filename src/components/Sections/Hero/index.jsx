@@ -43,7 +43,7 @@ function Hero() {
 
           <main className="flex flex-col items-center justify-center gap-12 lg:w-full lg:flex-row-reverse lg:flex-wrap lg:justify-center ">
             <MainSectionIllustration />
-            <MainSectionText t={t} />
+            <MainSectionText t={t} setIsActive={setIsActive} />
 
             <IconsMobile
               handleChangeLanguage={handleChangeLanguage}
@@ -59,7 +59,7 @@ function Hero() {
           <PdfViewer
             isActive={isActive}
             setIsActive={setIsActive}
-            pdfPath="resume/BeatrizVidalCurriculo.pdf"
+            pdfPath="resume/BeatrizVidal_Curriculo.pdf"
             style={style}
           />
         </header>
@@ -102,7 +102,7 @@ const HeroBackground = () => {
   );
 };
 
-const MainSectionText = ({ t }) => {
+const MainSectionText = ({ t, setIsActive }) => {
   return (
     <motion.div
       variants={animationMainText}

@@ -38,7 +38,7 @@
   },
   "projects": {
     "title": "Melhores Projetos",
-    "description": "Nos últimos anos, eu tenho focado numa <1>stack composta por Node.js, React.js, and TailwindCSS.</1> Geralmente eu também utilizo bibliotecas externas, como Radix, Lucide Icons, Material Tailwind, e Sooner para garantir que minhas aplicações sejam o mais <3>consistente e acessível</3> possível. Dê uma olhada no que venho fazendo!"
+    "description": "Nos últimos anos, eu tenho focado numa <1>stack composta por Node.js, React.js, e TailwindCSS.</1> Geralmente eu também utilizo bibliotecas externas, como Radix, Lucide Icons, Material Tailwind, e Sooner para garantir que minhas aplicações sejam o mais <3>consistente e acessível</3> possível. Dê uma olhada no que venho fazendo!"
   },
   "about": {
     "title": "Sobre mim",
