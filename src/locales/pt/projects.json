@@ -95,13 +95,13 @@
         "title": "Globo Esporte Desafio do Futuro",
         "fullTitle": "Globo Esporte - Desafio do Futuro",
         "description": [
-            "Aplicação ganhadora do último episódio do Desafio do Futuro, programa do Globo Esporte que foi ao ar do dia tal a dia tal",
+            "Aplicação ganhadora do último episódio do Desafio do Futuro, programa do Globo Esporte que foi ao ar em dezembro de 2024",
             "O desafio consistia em realizar o design e front-end de uma aplicação para a listagem dos vídeos do Globo Esporte. Junto com a listagem, cada vídeo deveria vir com uma seção de informações e outra seção com um questionário sobre o vídeo.",
-            "Dinâmica com os apresentadores tal e tal para concluir o desafio e realizar a defesa da aplicação.",
+            "Dinâmica com os apresentadores Marcos e Antero para concluir o desafio e realizar a defesa da aplicação.",
             "Prototipação feita pelo figma e desenvolvimento em React.js."
         ],
         "stack": ["react", "tailwind", "figma"],
-        "github": "https://github.com/programando-com-edu/DESAFIO-DO-FUTURO",
+        "github": "https://globoplay.globo.com/v/12186114/",
         "images": ["desafioFuturo.png"],
         "coverUrl": "desafioFuturo.png",
         "type": "mobile"
